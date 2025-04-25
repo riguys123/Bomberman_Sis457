@@ -1,0 +1,37 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "Bloque_Padre.generated.h"
+
+class UStaticMeshComponent;	
+UCLASS()
+class BOMBERMAN_012025_API ABloque_Padre : public AActor
+{
+	GENERATED_BODY()
+
+protected:
+	// Componente de malla estática
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Componentes")
+	UStaticMeshComponent* MallaBloque_Padre;
+
+protected:
+
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:	
+	ABloque_Padre();
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+	float FloatSpeed;
+	float RotationSpeed;
+	bool bPuedeMoverse;
+	// Variables para el movimiento aleatorio
+	FVector PosicionInicial; // Guarda la posición inicial del bloque
+	bool bMoverEnX;          // Determina si el bloque se mueve en el eje X
+	float DistanciaMovimiento; // Distancia que se moverá el bloque
+
+};

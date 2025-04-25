@@ -1,0 +1,13 @@
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_012025\Definitions.Bomberman_012025.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/EnemigoAereoFenix.h
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025\Enemigo.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Enemigo.generated.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\EnemigoAereoFenix.generated.h
