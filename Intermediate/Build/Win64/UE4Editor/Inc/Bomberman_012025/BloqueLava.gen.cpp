@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeBloqueLava() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABloqueLava_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "BloqueLava.h" },
 		{ "ModuleRelativePath", "BloqueLava.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueLava() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueLava, 1832751630);
+	IMPLEMENT_CLASS(ABloqueLava, 2791757471);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueLava>()
 	{
 		return ABloqueLava::StaticClass();

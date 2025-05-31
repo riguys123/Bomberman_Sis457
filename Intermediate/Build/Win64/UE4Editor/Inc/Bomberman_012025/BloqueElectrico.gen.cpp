@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeBloqueElectrico() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABloqueElectrico_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "BloqueElectrico.h" },
 		{ "ModuleRelativePath", "BloqueElectrico.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueElectrico() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueElectrico, 3003987818);
+	IMPLEMENT_CLASS(ABloqueElectrico, 921750919);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueElectrico>()
 	{
 		return ABloqueElectrico::StaticClass();

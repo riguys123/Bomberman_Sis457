@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeBloqueConcreto() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABloqueConcreto_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "BloqueConcreto.h" },
 		{ "ModuleRelativePath", "BloqueConcreto.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueConcreto() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueConcreto, 3969087572);
+	IMPLEMENT_CLASS(ABloqueConcreto, 4185653605);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueConcreto>()
 	{
 		return ABloqueConcreto::StaticClass();

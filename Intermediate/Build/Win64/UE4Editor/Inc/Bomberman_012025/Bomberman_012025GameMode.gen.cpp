@@ -40,10 +40,12 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025GameMode() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberman_012025GameMode_Statics::Class_MetaDataParams[] = {
+		{ "Comment", "//class ABloque_Padre;\n//class ABloqueLadrillo;\n//class AEnemigo;\n//class ABloqueMadera;\n" },
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
 		{ "IncludePath", "Bomberman_012025GameMode.h" },
 		{ "ModuleRelativePath", "Bomberman_012025GameMode.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
+		{ "ToolTip", "class ABloque_Padre;\nclass ABloqueLadrillo;\nclass AEnemigo;\nclass ABloqueMadera;" },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABomberman_012025GameMode_Statics::StaticCppClassTypeInfo = {
@@ -73,7 +75,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025GameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomberman_012025GameMode, 3537533181);
+	IMPLEMENT_CLASS(ABomberman_012025GameMode, 2479625935);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABomberman_012025GameMode>()
 	{
 		return ABomberman_012025GameMode::StaticClass();

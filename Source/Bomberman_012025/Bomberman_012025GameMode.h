@@ -6,10 +6,10 @@
 #include "GameFramework/GameModeBase.h"
 #include "Bomberman_012025GameMode.generated.h"
 
-class ABloque_Padre;
-class ABloqueLadrillo;
-class AEnemigo;
-class ABloqueMadera;
+//class ABloque_Padre;
+//class ABloqueLadrillo;
+//class AEnemigo;
+//class ABloqueMadera;
 
 
 UCLASS(minimalapi)
@@ -22,7 +22,7 @@ public:
 public:
 	virtual void BeginPlay() override;
 
-public:
+/*public:
 	//posicion del siguiente bloque 
 	// 
 	FVector PosicionSiguienteBloque = FVector(2000.0f, 1000.0f, 50.0f);
@@ -143,9 +143,10 @@ public:
 	TArray <FVector> aposicionesLibresMadera;
 	TArray <FVector> bloquesCandidatosLocalesMadera;
 	TArray<ABloque_Padre*> BloqueMadera;
+
 	void PosicionarEnBloqueMaderaConMasAdyacentes();
 
-
+	*/
 };
 
 

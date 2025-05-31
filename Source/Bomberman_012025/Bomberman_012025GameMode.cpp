@@ -24,8 +24,10 @@
 #include "EnemigoTerrestreTicTac.h"
 #include "EnemigoSubterraneoTopo.h"
 #include "EnemigoSubterraneoTarantula.h" 
-
-
+#include "Laberinto.h"
+#include "Director.h"
+#include "ILaberintoBuilder.h"
+#include "ILaberinto.h"
 
 
 ABomberman_012025GameMode::ABomberman_012025GameMode()
@@ -42,6 +44,31 @@ ABomberman_012025GameMode::ABomberman_012025GameMode()
 void ABomberman_012025GameMode::BeginPlay()
 {
 	Super::BeginPlay();
+
+	
+	ADirector* ALaberintoDirector = GetWorld()->SpawnActor<ADirector>();
+
+	ALaberinto* LaberintoConcreto = GetWorld()->SpawnActor<ALaberinto>();
+
+	ALaberintoDirector->SetBuilder(LaberintoConcreto); // Laberinto implementa ILaberintoBuilder
+	ALaberintoDirector->SetLaberinto(LaberintoConcreto); // Laberinto también implementa ILaberinto
+
+	ALaberintoDirector->MandarConstruir();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 	GEngine->AddOnScreenDebugMessage(-1, -1, FColor::Red, TEXT("Bloque Spawning"));
 	SpawnLaberinto();
 	SpawnPersonaje();
@@ -121,6 +148,7 @@ void ABomberman_012025GameMode::BeginPlay()
 
 
 	// la otra pregunta del parcial pregunta 1 
+	//aqui queria que el bloque madera aparezca en el bloque mas cercano al borde pero tiene un error y aparece incluso en os bloques madera del centro 
 
 	if (aposicionesLibresMadera.Num() > 0) {
 		FVector posicionMasCercana;
@@ -233,8 +261,8 @@ void ABomberman_012025GameMode::PosicionarEnBloqueMaderaConMasAdyacentes()
 void ABomberman_012025GameMode::SpawnBloque(FVector posicionBloque, int32 tipoBloque)
 {
 	ABloque_Padre* BloqueGenerado = nullptr;
-	//elejir el tipo de bloque a generar basado en el valor 
-	/*if (tipoBloque == 10)
+	elejir el tipo de bloque a generar basado en el valor 
+	if (tipoBloque == 10)
 	{
 		BloqueGenerado = GetWorld()->SpawnActor<ABloqueHongo>(ABloqueHongo::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
 	}
@@ -282,7 +310,7 @@ void ABomberman_012025GameMode::SpawnBloque(FVector posicionBloque, int32 tipoBl
 	{
 		aBloques.Add(BloqueGenerado);
 	}
-*/
+
 }
 
 void ABomberman_012025GameMode::DestruirBloque()
@@ -302,13 +330,13 @@ void ABomberman_012025GameMode::DestruirBloque()
 	//	}
 	//}
 }
-
+ //aqui modifique para que aparezca el personaje en los bloques madera smplemente cambiando las posiciones validas de 0 a 3 que es el bloque de madera 
 void ABomberman_012025GameMode::SpawnPersonaje()
 {
 	PosicionesValidasPersonaje.Empty();
 	for (int i = 1; i <= 50; i++) {
 		for (int j = 1; j <= 50; j++) {
-			if (aMapaBloques[i - 1][j - 1] == 3) {
+			if (aMapaBloques[i - 1][j - 1] == 3) { //<--aqui
 				FVector Pos = FVector(110.0f + i * 100.0f, -1250.0f + j * 100.0f, 390.0f);
 				PosicionesValidasPersonaje.Add(Pos);
 			};
@@ -409,6 +437,7 @@ void ABomberman_012025GameMode::IniciarEliminarBloque()
 	GetWorld()->GetTimerManager().SetTimer(TimerEliminarBloque, this, &ABomberman_012025GameMode::EliminarBloque, 3.0f, true);
 
 }
+
 
 
 
@@ -517,88 +546,4 @@ void ABomberman_012025GameMode::CambiarDireccion()
 	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, bDireccionEnX ? TEXT("Moviendo en X") : TEXT("Moviendo en Y"));
 
 }
-
-
-
-
-
-
-/*
-void AMyActor::TestMap()
-{
-	// Crear el TMap
-	TMap<FString, int32> ExampleMap;
-
-	// Agregar elementos
-	ExampleMap.Add("Jugador1", 100);
-	ExampleMap.Add("Jugador2", 200);
-	ExampleMap.Add("Jugador3", 300);
-
-	// Acceder a un valor
-	if (int32* Score = ExampleMap.Find("Jugador2"))
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Puntuación de Jugador2: %d"), *Score);
-	}
-
-	// Eliminar un elemento
-	ExampleMap.Remove("Jugador1");
-
-	// Iterar sobre el TMap
-	for (const TPair<FString, int32>& Pair : ExampleMap)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Clave: %s, Valor: %d"), *Pair.Key, Pair.Value);
-	}
-}
 */
-
-
-// Create a new Enemigo
-//ABloque* bloque01 = GetWorld()->SpawnActor<ABloque>(ABloque::StaticClass(), FVector(934.0f, 1370.0f, 100.0f), FRotator(0.0f, 0.0f, 0.0f));
-//ABloque* bloque02 = GetWorld()->SpawnActor<ABloque>(ABloque::StaticClass(), FVector(734.0f, 1370.0f, 50.0f), FRotator(0.0f, 0.0f, 0.0f));
-
-//int numeroBloqueConMovimiento = 0;
-
-/*
-for (int i = 0; i < 20; i++)
-{
-
-	ABloque* bloque = GetWorld()->SpawnActor<ABloque>(ABloque::StaticClass(), FVector(500.0f + i * 100 , 2500.0f - i * 100, 20.0f), FRotator(0.0f, 0.0f, 0.0f));
-
-
-	if (bloque->bPuedeMoverse)
-	{
-		numeroBloqueConMovimiento++;
-	}
-
-	if (numeroBloqueConMovimiento >= 6)
-	{
-		bloque->bPuedeMoverse = false;
-	}
-
-}
-*/
-//SpawnBloques();
-
-
-/*
-void ABomberMan_012025GameMode::SpawnBloques()
-{
-	// recorrer el array de bloques y hacer spawn de cada uno
-	for (int i = 0; i < 6; i++)
-	{
-		for(int j = 0; j < 8; j++)
-		{
-			if (aMapaBloques[i][j] == 1)
-			{
-				FVector PosicionBloque = FVector()
-				ABloqueLadrillo* BloqueLadrillo = GetWorld()->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), FVector(posicionSiguienteBloque.X + j * AnchoBloque, posicionSiguienteBloque.Y - i * LargoBloque, posicionSiguienteBloque.Z), FRotator(0.0f, 0.0f, 0.0f));
-		*/		/*if (BloqueLadrillo)
-				{
-					aBloques.Add(static_cast<ABloque*>(BloqueLadrillo));
-				}*/
-				/*		}
-					}
-					//ABloque* bloque = GetWorld()->SpawnActor<ABloque>(ABloque::StaticClass(), FVector(500.0f + i * 100, 2500.0f - i * 100, 20.0f), FRotator(0.0f, 0.0f, 0.0f));
-				}
-			}
-			*/

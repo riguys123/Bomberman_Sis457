@@ -6,9 +6,7 @@
 #include "Bloque_Padre.h"
 #include "BloqueLava.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class BOMBERMAN_012025_API ABloqueLava : public ABloque_Padre
 {
