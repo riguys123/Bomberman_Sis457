@@ -32,6 +32,7 @@
 /wd4244
 /wd4838
 /I .
+/I C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025\Private
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\Engine
 /I Runtime
 /I Runtime\Engine\Classes
@@ -233,6 +234,7 @@
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025
 /I C:\Bomberman_012025\Bomberman_012025\Source
+/I C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\AugmentedReality
 /I Runtime\AugmentedReality\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\MRMesh
@@ -266,11 +268,8 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
-/FI"C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\Bomberman_012025Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\Bomberman_012025Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\Bomberman_012025Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
 "C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025\EnemigoAcuaticoAnguila.cpp"
-/FI"C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_012025\Definitions.Bomberman_012025.h"
+/FI"C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_012025\Definitions.h"
 /Fo"C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_012025\EnemigoAcuaticoAnguila.cpp.obj"
 /TP
 /GR-

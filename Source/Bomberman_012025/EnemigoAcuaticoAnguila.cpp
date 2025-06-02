@@ -46,14 +46,14 @@ void AEnemigoAcuaticoAnguila::Tick(float DeltaTime)
 	// Lógica de movimiento ondulatorio
 	TiempoTotal += DeltaTime;
 	FVector NuevaPosicion = GetActorLocation();
-	NuevaPosicion += DireccionMovimiento * DeltaTime * 100.0f; // Ajusta la velocidad según sea necesario
+	NuevaPosicion += DireccionMovimiento * DeltaTime * 50.0f; // Ajusta la velocidad según sea necesario
 	NuevaPosicion.Z += FMath::Sin(TiempoTotal * FrecuenciaOndulacion) * AmplitudOndulacion;
 	SetActorLocation(NuevaPosicion);
 
 	// Lógica para cambiar de dirección al chocar con una pared
 	FHitResult HitResult;
 	FVector Start = GetActorLocation();
-	FVector End = Start + DireccionMovimiento * 100.0f; // Ajusta la distancia de detección según sea necesario
+	FVector End = Start + DireccionMovimiento * 50.0f; // Ajusta la distancia de detección según sea necesario
 
 	FCollisionQueryParams CollisionParams;
 	CollisionParams.AddIgnoredActor(this);
@@ -79,14 +79,14 @@ void AEnemigoAcuaticoAnguila::Paralizar(ACharacter* Player)
 		// Opcionalmente, puedes establecer un temporizador para reactivar la entrada después de una cierta duración
 	}
 }
-void AEnemigoAcuaticoAnguila::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
-
-	if (OtherActor && OtherActor != this && OtherActor->IsA(ABomberman_012025Character::StaticClass()))
-	{
-		MostrarMensaje();
-	}
-}
+//void AEnemigoAcuaticoAnguila::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+//{
+//
+//	if (OtherActor && OtherActor != this && OtherActor->IsA(ABomberman_012025Character::StaticClass()))
+//	{
+//		MostrarMensaje();
+//	}
+//}
 
 void AEnemigoAcuaticoAnguila::MostrarMensaje() const
 {

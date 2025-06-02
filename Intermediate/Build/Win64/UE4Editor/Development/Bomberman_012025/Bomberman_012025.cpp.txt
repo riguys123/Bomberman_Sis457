@@ -1,0 +1,2 @@
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_012025\Definitions.Bomberman_012025.h
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025\Bomberman_012025.h

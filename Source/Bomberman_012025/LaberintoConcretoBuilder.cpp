@@ -59,7 +59,7 @@ void ALaberintoConcretoBuilder::SetBloque_Padre(int Cantidad)
 
 void ALaberintoConcretoBuilder::SpawnLaberinto()
 {
-	PosicionesValidas.Empty();
+	//PosicionesValidas.Empty();
 	// Spawnear bloques según el valor de aMapaBloques
 	for (int i = 0; i < 50; i++) {
 		for (int j = 0; j < 50; j++) {
@@ -103,13 +103,13 @@ void ALaberintoConcretoBuilder::SpawnLaberinto()
 	};
 
 	// Crear lista de posiciones válidas (donde Laberinto1[i][j] == 0)
-	for (int i = 0; i < 50; i++) {
-		for (int j = 0; j < 50; j++) {
-			if (aMapaBloques[i][j] == 0) {
-				FVector Pos = FVector(110.0f + (i + 1) * 100.0f, -1250.0f + (j + 1) * 100.0f, 190.0f);
-				PosicionesValidas.Add(Pos);
-			};
-		};
-	};
+	//for (int i = 0; i < 50; i++) {
+	//	for (int j = 0; j < 50; j++) {
+	//		if (aMapaBloques[i][j] == 0) {
+	//			FVector Pos = FVector(110.0f + (i + 1) * 100.0f, -1250.0f + (j + 1) * 100.0f, 190.0f);
+	//			PosicionesValidas.Add(Pos);
+	//		};
+	//	};
+	//};
 }
 	

@@ -111,6 +111,6 @@ public:
 	float YInicial = 200.00f;
 	float AnchoBloque = 100.0f;
 	float LargoBloque = 100.0f;
-	TArray<FVector> PosicionesValidas;
+	//TArray<FVector> PosicionesValidas;
 
 };

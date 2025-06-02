@@ -7,7 +7,7 @@
 #include "ILaberinto.h"
 #include "Laberinto.generated.h"
 
-
+class ABloque_Padre;
 
 UCLASS()
 class BOMBERMAN_012025_API ALaberinto : public AActor, public IILaberinto

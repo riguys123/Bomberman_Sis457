@@ -28,6 +28,8 @@
 #include "Director.h"
 #include "ILaberintoBuilder.h"
 #include "ILaberinto.h"
+#include "EjercitoAcuaticoBuilder.h"
+#include "DirectorEjercito.h"
 
 
 ABomberman_012025GameMode::ABomberman_012025GameMode()
@@ -45,7 +47,19 @@ void ABomberman_012025GameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	
+    //builder de ejercito
+	ADirectorEjercito* ADirectorA = GetWorld()->SpawnActor<ADirectorEjercito>();
+	FVector Posicion = FVector(500.f, 500.f, 100.f);
+
+	AEjercitoAcuaticoBuilder* AEjercitoA = GetWorld()->SpawnActor<AEjercitoA>(AEjercitoAcuaticoBuilder::StaticClass(), Posicion, FRotator::ZeroRotator);
+		
+	//aca me quede 
+	ADirectorA->SetBuilder(Builder);
+	ADirectorA->Set();
+
+	AEjercitoA* Ejercito = Builder->GetEjercito();
+
+	/*
 	ADirector* ALaberintoDirector = GetWorld()->SpawnActor<ADirector>();
 
 	ALaberinto* LaberintoConcreto = GetWorld()->SpawnActor<ALaberinto>();
@@ -54,27 +68,13 @@ void ABomberman_012025GameMode::BeginPlay()
 	ALaberintoDirector->SetLaberinto(LaberintoConcreto); // Laberinto también implementa ILaberinto
 
 	ALaberintoDirector->MandarConstruir();
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/*
+	*/
 	GEngine->AddOnScreenDebugMessage(-1, -1, FColor::Red, TEXT("Bloque Spawning"));
 	SpawnLaberinto();
 	SpawnPersonaje();
 	PosicionarEnBloqueMaderaConMasAdyacentes();
 	//recorremos la matriz para generar bloques 
-	for (int32 fila = 0; fila < aMapaBloques.Num(); ++fila)
+	/*for (int32 fila = 0; fila < aMapaBloques.Num(); ++fila)
 	{
 		for (int32 columna = 0; columna < aMapaBloques[fila].Num(); ++columna)
 		{
@@ -92,12 +92,12 @@ void ABomberman_012025GameMode::BeginPlay()
 
 			}
 		}
-	}
+	}*/
 	//para eliminar bloque administrador de tiempo
 	GetWorld()->GetTimerManager().SetTimer(TimerInicialBloquesMadera, this, &ABomberman_012025GameMode::IniciarEliminarBloque, 10.0f, false);
 
 	// Inicializar posiciones válidas para enemigos
-	InicializarPosicionesEnemigos();
+	//InicializarPosicionesEnemigos();
 
 	// Spawnear enemigos
 	//for (int i = 0; i < 5; i++) // Generar 5 enemigos como ejemplo
@@ -258,10 +258,11 @@ void ABomberman_012025GameMode::PosicionarEnBloqueMaderaConMasAdyacentes()
 	}
 
 }
+/*
 void ABomberman_012025GameMode::SpawnBloque(FVector posicionBloque, int32 tipoBloque)
 {
 	ABloque_Padre* BloqueGenerado = nullptr;
-	elejir el tipo de bloque a generar basado en el valor 
+	//elejir el tipo de bloque a generar basado en el valor 
 	if (tipoBloque == 10)
 	{
 		BloqueGenerado = GetWorld()->SpawnActor<ABloqueHongo>(ABloqueHongo::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
@@ -311,7 +312,7 @@ void ABomberman_012025GameMode::SpawnBloque(FVector posicionBloque, int32 tipoBl
 		aBloques.Add(BloqueGenerado);
 	}
 
-}
+}*/
 
 void ABomberman_012025GameMode::DestruirBloque()
 {
@@ -371,22 +372,29 @@ void ABomberman_012025GameMode::SpawnPersonaje()
 
 void ABomberman_012025GameMode::SpawnEnemigo()
 {
-	if (PosicionesValidasEnemigos.Num() > 0)
-	{
-		// Seleccionar una posición aleatoria
-		int32 IndiceAleatorio = FMath::RandRange(0, PosicionesValidasEnemigos.Num() - 1);
-		FVector PosicionSpawn = PosicionesValidasEnemigos[IndiceAleatorio];
+	if (PosicionesLibresEnemigos.Num() < 8) return;
 
-		// Spawnear el enemigo
-		FActorSpawnParameters SpawnParams;
-		GetWorld()->SpawnActor<AEnemigo>(AEnemigo::StaticClass(), PosicionSpawn, FRotator::ZeroRotator, SpawnParams);
+	    TArray<FVector> PosicionesLibres;
+	    auto ObtenerPosicionAleatoria = [&]() -> FVector
+		{
+			FVector Posicion;
+			do
+			{
+				Posicion = PosicionesLibresEnemigos[FMath::RandRange(0, PosicionesLibresEnemigos.Num() - 1)];
+			} while (PosicionesLibresEnemigos.Contains(Posicion)); // Asegurarse de que la posición no esté ocupada
+			PosicionesLibresEnemigos.Add(Posicion); // Agregar la posición a la lista de ocupadas
+			return Posicion;
+		};
 
-		// Eliminar la posición utilizada
-		PosicionesValidasEnemigos.RemoveAt(IndiceAleatorio);
-	}
-}
-
-
+	// Spawnear 5 enemigos aleatorios en posiciones vacías
+	GetWorld()->SpawnActor<AEnemigoAcuaticoPezGlobo>(AEnemigoAcuaticoPezGlobo::StaticClass(), ObtenerPosicionAleatoria(), FRotator::ZeroRotator);
+	GetWorld()->SpawnActor<AEnemigoAcuaticoPezGlobo>(AEnemigoAcuaticoPezGlobo::StaticClass(), ObtenerPosicionAleatoria(), FRotator::ZeroRotator);
+	GetWorld()->SpawnActor<AEnemigoAcuaticoAnguila>(AEnemigoAcuaticoAnguila::StaticClass(), ObtenerPosicionAleatoria(), FRotator::ZeroRotator);
+	GetWorld()->SpawnActor<AEnemigoAcuaticoAnguila>(AEnemigoAcuaticoAnguila::StaticClass(), ObtenerPosicionAleatoria(), FRotator::ZeroRotator);
+	//GetWorld()->SpawnActor<AEnemigoSubterraneoTarantula>(AEnemigoSubterraneoTarantula::StaticClass(), ObtenerPosicionAleatoria(), FRotator::ZeroRotator);
+   }
+	
+/*
 void ABomberman_012025GameMode::InicializarPosicionesEnemigos()
 {
 	PosicionesValidasEnemigos.Empty();
@@ -402,11 +410,11 @@ void ABomberman_012025GameMode::InicializarPosicionesEnemigos()
 		}
 	}
 }
-
+*/
 
 void ABomberman_012025GameMode::EliminarBloque()
 {
-
+	/*
 	TArray<ABloque_Padre*> BloquesMadera;
 
 	for (ABloque_Padre* Bloque : aBloques)
@@ -427,7 +435,7 @@ void ABomberman_012025GameMode::EliminarBloque()
 			BloqueActual->Destroy();
 			aBloques.Remove(BloqueActual);
 		}
-	}
+	}*/
 }
 
 
@@ -546,4 +554,3 @@ void ABomberman_012025GameMode::CambiarDireccion()
 	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, bDireccionEnX ? TEXT("Moviendo en X") : TEXT("Moviendo en Y"));
 
 }
-*/

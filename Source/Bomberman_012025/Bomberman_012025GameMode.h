@@ -6,10 +6,10 @@
 #include "GameFramework/GameModeBase.h"
 #include "Bomberman_012025GameMode.generated.h"
 
-//class ABloque_Padre;
-//class ABloqueLadrillo;
-//class AEnemigo;
-//class ABloqueMadera;
+class ABloque_Padre;
+class ABloqueLadrillo;
+class AEnemigo;
+class ABloqueMadera;
 
 
 UCLASS(minimalapi)
@@ -22,7 +22,10 @@ public:
 public:
 	virtual void BeginPlay() override;
 
-/*public:
+
+
+
+public:
 	//posicion del siguiente bloque 
 	// 
 	FVector PosicionSiguienteBloque = FVector(2000.0f, 1000.0f, 50.0f);
@@ -95,7 +98,7 @@ public:
 	FTimerHandle thDestruirBloque;
 
 	//void SpawnBloques();
-	void SpawnBloque(FVector posicionBloque,int32 tipoBloque);
+	//void SpawnBloque(FVector posicionBloque,int32 tipoBloque);
 	
 	void DestruirBloque();
 
@@ -105,12 +108,20 @@ public:
 	
 	void SpawnPersonaje();	
 	TArray<FVector> PosicionesValidasPersonaje;
-	
+
+public:
+	//para enemigos
 	void SpawnEnemigo();
 	// Declaración de variables necesarias
-	TArray<FVector> PosicionesValidasEnemigos; // Para almacenar posiciones válidas de spawn
+	TArray<FVector> PosicionesLibresEnemigos; // Para almacenar posiciones válidas de spawn
+	UPROPERTY()
+	TArray<AEnemigo*> EnemigosA;//GUARDA LOS ENEMIGOS 
 	
-	void InicializarPosicionesEnemigos();
+
+
+
+	
+	//void InicializarPosicionesEnemigos();
 
 	void EliminarBloque();                                       
 	
@@ -146,7 +157,10 @@ public:
 
 	void PosicionarEnBloqueMaderaConMasAdyacentes();
 
-	*/
+	//para el ejercito builder 
+
+
+
 };
 
 

@@ -1,0 +1,97 @@
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_012025\Definitions.Bomberman_012025.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/Bloque_Padre.gen.cpp
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/Bloque_Padre.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Bloque_Padre.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/BloqueAcero.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/BloqueAcero.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\BloqueAcero.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/BloqueArena.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/BloqueArena.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\BloqueArena.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/BloqueBurbuja.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/BloqueBurbuja.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\BloqueBurbuja.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/BloqueConcreto.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/BloqueConcreto.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\BloqueConcreto.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/BloqueElectrico.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/BloqueElectrico.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\BloqueElectrico.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/BloqueHielo.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/BloqueHielo.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\BloqueHielo.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/BloqueHongo.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/BloqueHongo.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\BloqueHongo.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/BloqueLadrillo.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/BloqueLadrillo.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\BloqueLadrillo.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/BloqueLava.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/BloqueLava.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\BloqueLava.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/BloqueMadera.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/BloqueMadera.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\BloqueMadera.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/Bomba.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/Bomba.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Bomba.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/Bomberman_012025Character.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/Bomberman_012025Character.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Bomberman_012025Character.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/Director.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/Director.h
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025\ILaberinto.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\ILaberinto.generated.h
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025\ILaberintoBuilder.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\ILaberintoBuilder.generated.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Director.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/EjercitoA.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/Public/EjercitoA.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\EjercitoA.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/Enemigo.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/Enemigo.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Enemigo.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/EnemigoAcuaticoPezGlobo.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/EnemigoAcuaticoPezGlobo.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\EnemigoAcuaticoPezGlobo.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/EnemigoAereoFenix.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/EnemigoAereoFenix.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\EnemigoAereoFenix.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/EnemigoAereoMurcielago.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/EnemigoAereoMurcielago.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\EnemigoAereoMurcielago.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/EnemigoSubterraneoTarantula.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/EnemigoSubterraneoTarantula.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\EnemigoSubterraneoTarantula.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/EnemigoSubterraneoTopo.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/EnemigoSubterraneoTopo.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\EnemigoSubterraneoTopo.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/EnemigoTerrestreLobo.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/EnemigoTerrestreLobo.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\EnemigoTerrestreLobo.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/EnemigoTerrestreTicTac.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/EnemigoTerrestreTicTac.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\EnemigoTerrestreTicTac.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/ILaberinto.gen.cpp
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/ILaberintoBuilder.gen.cpp
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/Laberinto.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/Laberinto.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Laberinto.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/LaberintoConcretoBuilder.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/LaberintoConcretoBuilder.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\LaberintoConcretoBuilder.generated.h
+C:/Bomberman_012025/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/Puerta.gen.cpp
+C:\Bomberman_012025\Bomberman_012025\Source\Bomberman_012025/Puerta.h
+C:\Bomberman_012025\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Puerta.generated.h

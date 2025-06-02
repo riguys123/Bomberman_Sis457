@@ -38,9 +38,9 @@ public:
 		class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
 		bool bFromSweep, const FHitResult& SweepResult);*/
 		// Método virtual para manejar la colisión con el jugador
-	virtual void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor,
-		class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
-		bool bFromSweep, const FHitResult& SweepResult);
+	//virtual void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor,
+	//	class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
+	//	bool bFromSweep, const FHitResult& SweepResult);
 
 
 
