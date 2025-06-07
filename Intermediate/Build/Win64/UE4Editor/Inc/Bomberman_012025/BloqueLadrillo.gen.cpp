@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeBloqueLadrillo() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABloqueLadrillo_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "BloqueLadrillo.h" },
 		{ "ModuleRelativePath", "BloqueLadrillo.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueLadrillo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueLadrillo, 2243995831);
+	IMPLEMENT_CLASS(ABloqueLadrillo, 1914244087);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueLadrillo>()
 	{
 		return ABloqueLadrillo::StaticClass();

@@ -11,7 +11,18 @@ UCLASS()
 class BOMBERMAN_012025_API ABloqueLava : public ABloque_Padre
 {
 	GENERATED_BODY()
-public:
-	ABloqueLava();
 
+protected:
+	ABloqueLava();
+	virtual void BeginPlay() override;
+
+public:
+	virtual void Tick(float DeltaTime) override;
+
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UParticleSystemComponent* ParticulasLava;
+
+	float TiempoLava;
+	FVector PosicionInicial;
 };

@@ -26,24 +26,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	virtual void SetBomba(int Cantidad) override;
-	virtual void SetEnemigo(int Cantidad) override;
-	virtual void SetPuerta(int Cantidad) override;
-	virtual void SetBloque_Padre(int Cantidad) override;
+public:
+	TArray<AActor*> Elementos;
 
+	void AgregarElemento(AActor* Elemento);
 
-	//variables para los objetos del laberinto 
-	/*
-	UPROPERTY()
-	TArray<ABomba*> Bombas;
-
-	UPROPERTY()
-	TArray<AEnemigo*> Enemigos;
-
-	UPROPERTY()
-	TArray<APuerta*> Puertas;
-
-	UPROPERTY()	
-	TArray<ABloque_Padre*> Bloques_Padres;
-	*/
 };

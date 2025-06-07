@@ -21,13 +21,9 @@ class BOMBERMAN_012025_API IILaberintoBuilder
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 
-	virtual void BuildBomba() = 0;
-	virtual void BuildEnemigo() = 0;
-	virtual void BuildPuerta() = 0;
-	virtual void BuildBloque_Padre() = 0;
+	virtual void ConstruirMatriz(const TArray<TArray<int32>>& Matriz) = 0;
 
+	virtual class ALaberinto* ObtenerLaberinto() = 0;
 
-
-
-
+	virtual const TArray<FVector>& GetPosicionesValidas() const = 0;
 };

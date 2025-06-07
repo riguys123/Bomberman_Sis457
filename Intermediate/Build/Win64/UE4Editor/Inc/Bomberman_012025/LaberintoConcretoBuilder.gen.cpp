@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeLaberintoConcretoBuilder() {}
 	BOMBERMAN_012025_API UClass* Z_Construct_UClass_ALaberintoConcretoBuilder();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Bomberman_012025();
-	BOMBERMAN_012025_API UClass* Z_Construct_UClass_UILaberinto_NoRegister();
+	BOMBERMAN_012025_API UClass* Z_Construct_UClass_UILaberintoBuilder_NoRegister();
 // End Cross Module References
 	void ALaberintoConcretoBuilder::StaticRegisterNativesALaberintoConcretoBuilder()
 	{
@@ -49,7 +49,7 @@ void EmptyLinkFunctionForGeneratedCodeLaberintoConcretoBuilder() {}
 	};
 #endif
 		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::InterfaceParams[] = {
-			{ Z_Construct_UClass_UILaberinto_NoRegister, (int32)VTABLE_OFFSET(ALaberintoConcretoBuilder, IILaberinto), false },
+			{ Z_Construct_UClass_UILaberintoBuilder_NoRegister, (int32)VTABLE_OFFSET(ALaberintoConcretoBuilder, IILaberintoBuilder), false },
 		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ALaberintoConcretoBuilder>::IsAbstract,
@@ -78,7 +78,7 @@ void EmptyLinkFunctionForGeneratedCodeLaberintoConcretoBuilder() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ALaberintoConcretoBuilder, 3833742999);
+	IMPLEMENT_CLASS(ALaberintoConcretoBuilder, 335897453);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ALaberintoConcretoBuilder>()
 	{
 		return ALaberintoConcretoBuilder::StaticClass();

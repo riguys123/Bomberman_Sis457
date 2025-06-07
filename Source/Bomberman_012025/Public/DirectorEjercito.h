@@ -13,9 +13,10 @@ class BOMBERMAN_012025_API ADirectorEjercito : public AActor
 	GENERATED_BODY()
 
 private:
-	IEjercitoBuilder* Builder;
+	IIEjercitoBuilder* Builder;
+
 public:
-	void SetBuilder(IEjercitoBuilder* InBuilder)
+	void SetBuilder(IIEjercitoBuilder* InBuilder)
 	{
 		Builder = InBuilder;
 	}
@@ -23,20 +24,28 @@ public:
 	void ConstruirEjercitoAcuatico(UWorld* Mundo, FVector PosicionInicial)
 	{
 		Builder->Reset();
-		Builder->AgregarComandanteA();
-		Builder->AgregarEnemigoAcuaticoPezGlobo1();
-		Builder->AgregarEnemigoAcuaticoPezGlobo2();
+		Builder->AgregarComandante();
+		Builder->AgregarAEnemigoAcuaticoPezGlobo1();
+		Builder->AgregarAEnemigoAcuaticoPezGlobo2();
 	}
 
 public:	
 	// Sets default values for this actor's properties
 	ADirectorEjercito();
+	//// Asegúrate de que EjercitoA esté definido e inicializado correctamente
+	//AActor* EjercitoA = GetWorld()->SpawnActor<AActor>(); // Ejemplo de inicialización
+	//Builder = Cast<IIEjercitoBuilder>(EjercitoA);
+	//if (Builder)
+	//{
+	//	SetBuilder(Builder);
+	//}
+	
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

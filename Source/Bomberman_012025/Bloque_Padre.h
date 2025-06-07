@@ -7,6 +7,7 @@
 #include "Bloque_Padre.generated.h"
 
 class UStaticMeshComponent;	
+class UParticleSystemComponent;
 UCLASS()
 class BOMBERMAN_012025_API ABloque_Padre : public AActor
 {
@@ -15,8 +16,9 @@ class BOMBERMAN_012025_API ABloque_Padre : public AActor
 protected:
 	// Componente de malla estática
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Componentes")
-	UStaticMeshComponent* MallaBloque_Padre;
-
+	UStaticMeshComponent* MallaBloque_Padre;// malla del bloque padre
+	UPROPERTY()
+	UParticleSystemComponent* Particulas;// particulas
 protected:
 
 	// Called when the game starts or when spawned
@@ -26,6 +28,9 @@ public:
 	ABloque_Padre();
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+
+
 	float FloatSpeed;
 	float RotationSpeed;
 	bool bPuedeMoverse;
@@ -33,5 +38,9 @@ public:
 	FVector PosicionInicial; // Guarda la posición inicial del bloque
 	bool bMoverEnX;          // Determina si el bloque se mueve en el eje X
 	float DistanciaMovimiento; // Distancia que se moverá el bloque
+	bool bDestruible = true; // Indica si el bloque es destruible
+
+	virtual void AjustarTamano(FVector NuevoTamano);
+
 
 };

@@ -18,6 +18,7 @@ void EmptyLinkFunctionForGeneratedCodeBloque_Padre() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Bomberman_012025();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UParticleSystemComponent_NoRegister();
 // End Cross Module References
 	void ABloque_Padre::StaticRegisterNativesABloque_Padre()
 	{
@@ -36,6 +37,10 @@ void EmptyLinkFunctionForGeneratedCodeBloque_Padre() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MallaBloque_Padre_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MallaBloque_Padre;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Particulas_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Particulas;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -60,8 +65,18 @@ void EmptyLinkFunctionForGeneratedCodeBloque_Padre() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABloque_Padre_Statics::NewProp_MallaBloque_Padre = { "MallaBloque_Padre", nullptr, (EPropertyFlags)0x00200800000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABloque_Padre, MallaBloque_Padre), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABloque_Padre_Statics::NewProp_MallaBloque_Padre_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABloque_Padre_Statics::NewProp_MallaBloque_Padre_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABloque_Padre_Statics::NewProp_Particulas_MetaData[] = {
+		{ "Comment", "// malla del bloque padre\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Bloque_Padre.h" },
+		{ "ToolTip", "malla del bloque padre" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABloque_Padre_Statics::NewProp_Particulas = { "Particulas", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABloque_Padre, Particulas), Z_Construct_UClass_UParticleSystemComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABloque_Padre_Statics::NewProp_Particulas_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABloque_Padre_Statics::NewProp_Particulas_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABloque_Padre_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABloque_Padre_Statics::NewProp_MallaBloque_Padre,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABloque_Padre_Statics::NewProp_Particulas,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABloque_Padre_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABloque_Padre>::IsAbstract,
@@ -90,7 +105,7 @@ void EmptyLinkFunctionForGeneratedCodeBloque_Padre() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloque_Padre, 3300654430);
+	IMPLEMENT_CLASS(ABloque_Padre, 1683351160);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloque_Padre>()
 	{
 		return ABloque_Padre::StaticClass();

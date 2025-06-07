@@ -3,12 +3,15 @@
 
 #include "EjercitoAcuaticoBuilder.h"
 
-// Sets default values
-AEjercitoAcuaticoBuilder::AEjercitoAcuaticoBuilder((UWorld* InMundo, FVector PosicionInicial))
-	: Mundo(InMundo), PosicionBase(InPosicion), EjercitoA(nullptr)
-
+AEjercitoAcuaticoBuilder::AEjercitoAcuaticoBuilder()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+}
+
+// Sets default values
+AEjercitoAcuaticoBuilder::AEjercitoAcuaticoBuilder(UWorld* InMundo, FVector PosicionInicial)
+	: Mundo(InMundo), PosicionBase(PosicionInicial), Ejercito(nullptr)
+{
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 }
@@ -18,14 +21,14 @@ void AEjercitoAcuaticoBuilder::Reset()
 	Ejercito = Mundo->SpawnActor<AEjercitoA>(PosicionBase, FRotator::ZeroRotator);
 }
 
-void AEjercitoAcuaticoBuilder::AgregarComandanteA()
+void AEjercitoAcuaticoBuilder::AgregarComandante()
 {
 	FVector Pos = PosicionBase + FVector(0.f, 0.f, 100.f);
 	AEnemigoAcuaticoAnguila* Comandante = Mundo->SpawnActor<AEnemigoAcuaticoAnguila>(Pos, FRotator::ZeroRotator);
 	Ejercito->AgregarEnemigo(Comandante);
 }
 
-void AEjercitoAcuaticoBuilder::AgregarEnemigoAcuaticoPezGlobo1()
+void AEjercitoAcuaticoBuilder::AgregarAEnemigoAcuaticoPezGlobo1()
 {
 	FVector Pos = PosicionBase + FVector(0.f, 0.f, 50.f);
 	AEnemigoAcuaticoPezGlobo* PezGlobo1 = Mundo->SpawnActor<AEnemigoAcuaticoPezGlobo>(Pos, FRotator::ZeroRotator);
@@ -33,7 +36,7 @@ void AEjercitoAcuaticoBuilder::AgregarEnemigoAcuaticoPezGlobo1()
 
 }
 
-void AEjercitoAcuaticoBuilder::AgregarEnemigoAcuaticoPezGlobo2()
+void AEjercitoAcuaticoBuilder::AgregarAEnemigoAcuaticoPezGlobo2()
 {
 	FVector Pos = PosicionBase + FVector(0.f, 0.f, 150.f);
 	AEnemigoAcuaticoPezGlobo* PezGlobo2 = Mundo->SpawnActor<AEnemigoAcuaticoPezGlobo>(Pos, FRotator::ZeroRotator);

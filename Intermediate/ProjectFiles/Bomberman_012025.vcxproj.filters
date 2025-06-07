@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Bomberman_012025.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{242C196E-75B5-4FB8-AE72-3400E35F59ED}</UniqueIdentifier>
+      <UniqueIdentifier>{4F813EB7-7CD7-4365-973E-5B0BD42DFD05}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Bomberman_012025.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\Temp.txt" />
     <Filter Include="Config">
-      <UniqueIdentifier>{9AA2E08B-AB71-4086-B797-B3BCE5358A53}</UniqueIdentifier>
+      <UniqueIdentifier>{6E9A33BC-17BC-4D11-96B9-35A56175A773}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -33,7 +33,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Bomberman_012025">
-      <UniqueIdentifier>{317F7FFC-AD30-4418-8414-06E57297842B}</UniqueIdentifier>
+      <UniqueIdentifier>{D2511277-60EC-4948-8851-AD373D696AD3}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Bomberman_012025\BloqueAcero.cpp">
       <Filter>Source\Bomberman_012025</Filter>
@@ -219,7 +219,7 @@
       <Filter>Source\Bomberman_012025</Filter>
     </ClInclude>
     <Filter Include="Source\Bomberman_012025\Private">
-      <UniqueIdentifier>{9E0F395C-394F-4D23-9A2D-BABB009625FF}</UniqueIdentifier>
+      <UniqueIdentifier>{70CA56D9-6AE5-490C-9191-C7CC61A8AE09}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\DirectorEjercito.cpp">
       <Filter>Source\Bomberman_012025\Private</Filter>
@@ -234,7 +234,7 @@
       <Filter>Source\Bomberman_012025\Private</Filter>
     </ClCompile>
     <Filter Include="Source\Bomberman_012025\Public">
-      <UniqueIdentifier>{0F000EEA-4790-4972-82CA-4B3A5786417A}</UniqueIdentifier>
+      <UniqueIdentifier>{D453ABE8-C2B3-4F41-AB12-5576D2A0D134}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\DirectorEjercito.h">
       <Filter>Source\Bomberman_012025\Public</Filter>

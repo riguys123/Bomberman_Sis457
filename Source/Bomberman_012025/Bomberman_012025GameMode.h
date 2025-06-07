@@ -31,7 +31,7 @@ public:
 	FVector PosicionSiguienteBloque = FVector(2000.0f, 1000.0f, 50.0f);
 	//FVector PosicionSiguienteBloque = FVector(500.0f, 250.0f, 10.0f);
 	
-	
+	/*
 	//declarar un mapa de bloques con un arrray bidimensional 
 	TArray<TArray<int32>> aMapaBloques = {
 	{ 0,  0,  0,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1 },
@@ -85,6 +85,7 @@ public:
 	{ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1 },
 	{ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1, 1,  1,  1,  1,  1,  1 }
 	};
+	*/
 	//dimensiones y posicion del bloque
 	float XInicial = 300.00f; 
 	float YInicial = 200.00f;
@@ -158,7 +159,7 @@ public:
 	void PosicionarEnBloqueMaderaConMasAdyacentes();
 
 	//para el ejercito builder 
-
+	void CrearEjercitoAcuatico();
 
 
 };

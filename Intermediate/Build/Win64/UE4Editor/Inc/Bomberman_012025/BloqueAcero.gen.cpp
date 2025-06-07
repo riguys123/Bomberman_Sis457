@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueAcero() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueAcero, 1797687874);
+	IMPLEMENT_CLASS(ABloqueAcero, 2264791159);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueAcero>()
 	{
 		return ABloqueAcero::StaticClass();

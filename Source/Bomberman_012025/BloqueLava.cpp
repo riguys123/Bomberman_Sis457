@@ -2,12 +2,55 @@
 
 
 #include "BloqueLava.h"
+#include "Components/StaticMeshComponent.h"
+#include "Materials/MaterialInterface.h"
+#include "Particles/ParticleSystemComponent.h"
 
 ABloqueLava::ABloqueLava()
 {
-	static ConstructorHelpers::FObjectFinder<UMaterial> ObjetoMaterial(TEXT("Material'/Game/StarterContent/Materials/M_CobbleStone_Smooth.M_CobbleStone_Smooth'"));
-	if (ObjetoMaterial.Succeeded())
+	PrimaryActorTick.bCanEverTick = true;
+
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ObjetoMeshBloqueAcero(TEXT("/Script/Engine.StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
+	if (ObjetoMeshBloqueAcero.Succeeded())
 	{
-		MallaBloque_Padre->SetMaterial(0, ObjetoMaterial.Object);
+		MallaBloque_Padre->SetStaticMesh(ObjetoMeshBloqueAcero.Object);
+
+		MallaBloque_Padre->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 	}
+	//para asignar textura
+	static ConstructorHelpers::FObjectFinder<UMaterialInterface> ObjetoBloqueAceroMaterial(TEXT("/Script/Engine.Material'/Game/StarterContent/Materials/Fuego.Fuego'"));
+	if (ObjetoBloqueAceroMaterial.Succeeded())
+	{
+		MallaBloque_Padre->SetMaterial(0, ObjetoBloqueAceroMaterial.Object);
+
+	}
+	ParticulasLava = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticulasLava"));
+	ParticulasLava->SetupAttachment(RootComponent);
+
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> LavaFX(TEXT("/Game/StarterContent/Particles/P_Fire.P_Fire"));
+	if (LavaFX.Succeeded())
+	{
+		ParticulasLava->SetTemplate(LavaFX.Object);
+	}
+	TiempoLava = 0.f;
+}
+
+void ABloqueLava::BeginPlay()
+{
+	Super::BeginPlay();
+	ParticulasLava->Activate();
+	PosicionInicial = GetActorLocation();
+}
+
+void ABloqueLava::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	TiempoLava += DeltaTime;
+
+	float DesplazamientoZ = FMath::Sin(TiempoLava * 2.0f) * 10.0f; // Subida y bajada suave
+	FVector NuevaPosicion = PosicionInicial;
+	NuevaPosicion.Z += DesplazamientoZ;
+
+	SetActorLocation(NuevaPosicion);
 }

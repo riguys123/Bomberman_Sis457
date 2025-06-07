@@ -8,14 +8,25 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef BOMBERMAN_012025_BloqueHongo_generated_h
 #error "BloqueHongo.generated.h already included, missing '#pragma once' in BloqueHongo.h"
 #endif
 #define BOMBERMAN_012025_BloqueHongo_generated_h
 
 #define Bomberman_012025_Source_Bomberman_012025_BloqueHongo_h_15_SPARSE_DATA
-#define Bomberman_012025_Source_Bomberman_012025_BloqueHongo_h_15_RPC_WRAPPERS
-#define Bomberman_012025_Source_Bomberman_012025_BloqueHongo_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define Bomberman_012025_Source_Bomberman_012025_BloqueHongo_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnOverlapBegin);
+
+
+#define Bomberman_012025_Source_Bomberman_012025_BloqueHongo_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnOverlapBegin);
+
+
 #define Bomberman_012025_Source_Bomberman_012025_BloqueHongo_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABloqueHongo(); \

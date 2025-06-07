@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "Director.h"
 
 // Sets default values
@@ -25,31 +24,19 @@ void ADirector::Tick(float DeltaTime)
 
 }
 
-void ADirector::SetBuilder(TScriptInterface<IILaberintoBuilder> Builder)
+void ADirector::SetBuilder(IILaberintoBuilder* InBuilder)
 {
-	LB = Builder;
+    Builder = InBuilder;
 }
 
-void ADirector::SetLaberinto(TScriptInterface<IILaberinto> Laberinto)
+void ADirector::ConstruirLaberinto(const TArray<TArray<int32>>& Matriz)
 {
-	LA = Laberinto;
+	if (Builder)
+	{
+		Builder->ConstruirMatriz(Matriz);
+		// Obtener las posiciones válidas del builder
+		const TArray<FVector>& PosicionesValidas = Builder->GetPosicionesValidas();
+
+	}
 }
 
-void ADirector::MandarConstruir()
-{
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Construyendo Laberinto..."));
-	if (LB)
-	{
-		LB->BuildBomba();
-		LB->BuildEnemigo();
-		LB->BuildPuerta();
-		LB->BuildBloque_Padre();
-	}
-	if (LA)
-	{
-		LA->SetBomba(1);
-		LA->SetEnemigo(1);
-		LA->SetPuerta(1);
-		LA->SetBloque_Padre(1);
-	}
-}

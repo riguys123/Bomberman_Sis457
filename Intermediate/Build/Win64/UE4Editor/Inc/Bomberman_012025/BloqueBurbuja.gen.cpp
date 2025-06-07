@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeBloqueBurbuja() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABloqueBurbuja_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "BloqueBurbuja.h" },
 		{ "ModuleRelativePath", "BloqueBurbuja.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueBurbuja() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueBurbuja, 1192945553);
+	IMPLEMENT_CLASS(ABloqueBurbuja, 2993873924);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueBurbuja>()
 	{
 		return ABloqueBurbuja::StaticClass();

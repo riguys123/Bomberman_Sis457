@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeBloqueMadera() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABloqueMadera_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "BloqueMadera.h" },
 		{ "ModuleRelativePath", "BloqueMadera.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueMadera() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueMadera, 3405178186);
+	IMPLEMENT_CLASS(ABloqueMadera, 942775743);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueMadera>()
 	{
 		return ABloqueMadera::StaticClass();

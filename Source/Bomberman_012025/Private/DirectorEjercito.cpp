@@ -24,4 +24,5 @@ void ADirectorEjercito::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-
+//UPROPERTY()
+//IIEjercitoBuilder* Builder;

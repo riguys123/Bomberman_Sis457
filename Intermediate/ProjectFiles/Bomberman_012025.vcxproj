@@ -51,7 +51,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{AD634275-FDD2-4EC5-9C31-EE8CF9900587}</ProjectGuid>
+    <ProjectGuid>{CD72171E-B521-44C9-8D90-34DB9FAAEF99}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>Bomberman_012025</RootNamespace>
     <PlatformToolset>v143</PlatformToolset>

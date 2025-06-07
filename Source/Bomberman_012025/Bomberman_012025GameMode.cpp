@@ -27,9 +27,10 @@
 #include "Laberinto.h"
 #include "Director.h"
 #include "ILaberintoBuilder.h"
-#include "ILaberinto.h"
+#include "LaberintoConcretoBuilder.h"
 #include "EjercitoAcuaticoBuilder.h"
 #include "DirectorEjercito.h"
+
 
 
 ABomberman_012025GameMode::ABomberman_012025GameMode()
@@ -47,8 +48,76 @@ void ABomberman_012025GameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-    //builder de ejercito
-	ADirectorEjercito* ADirectorA = GetWorld()->SpawnActor<ADirectorEjercito>();
+    //builder de laberinto
+	// Ejemplo de matriz (puedes cargarla desde archivo o generarla)
+	TArray<TArray<int32>> Matriz = {
+
+{ 0,  0,  0,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1 },
+	{ 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1 },
+	{ 0,  0,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  0,  0,  1,  2,  3,  4,  5,  6,  7,  8,  0,  10, 0,  1,  2,  3,  4,  5,  6,  7,  8,  0,  10, 0,  6,  2,  3,  0,  1 },
+	{ 1,  0,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  0,  1 },
+	{ 1,  0,  4, 10,  0,  5,  9,  2,  0,  6,  1,  3,  0,  7,  5,  2,  9,  4,  6,  8,  0,  0,  3,  5,  7,  1,  2,  4,  6,  8,  3,  0,  3,  5,  2,  4,  6,  8,  9,  7,  2,  5,  0,  4,  6,  0,  3,  8,  0,  1 },
+	{ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1 },
+	{ 1,  0,  7, 10,  0,  5,  9,  2,  0,  6, 10,  3,  0,  7,  5,  2,  9,  4,  6,  8,  0,  0,  3,  5,  7, 10,  2,  4,  6,  8,  1,  0,  3,  5,  2,  4,  6,  8,  9,  7,  2,  5,  0,  4,  6,  0,  3,  8,  0,  1 },
+	{ 1,  0,  1,  2,  3,  4,  5,  6,  0,  8,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  8,  0, 10,  0,  1,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  8,  2,  0,  1 },
+	{ 1,  0,  4, 10,  0,  5,  9,  2,  0,  6,  1,  3,  0,  7,  5,  2,  9,  4,  6,  8,  0,  0,  3,  5,  7,  10,  2,  4,  6,  8,  1,  0,  3,  5,  2,  4,  6,  8,  9,  7,  2,  5,  0,  4,  6,  0,  3,  8,  0,  1 },
+	{ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1 },
+	{ 1,  0,  7,  1,  0,  5,  9,  2,  0,  6, 10,  3,  0,  7,  5,  2,  9,  4,  6,  8,  0,  0,  3,  5,  7, 10,  2,  4,  6,  8,  1,  0,  3,  5,  2,  4,  6,  8,  9,  7,  2,  5,  0,  4,  6,  0,  3,  8,  0,  1 },
+	{ 1,  0,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  0,  0,  7,  2,  3,  4,  5,  6,  7,  8,  0, 10,  0,  1,  2,  3,  4,  5,  6,  7,  8,  0, 10,  0,  1,  2,  3,  0,  1 },
+	{ 1,  0,  4,  2,  0,  5,  8,  7,  0,  9,  2,  3,  1,  4,  0,  5,  8,  7,  6,  9,  5,  0,  3,  4,  5,  0,  6,  7,  8,  9,  2,  0,  4,  4,  0,  5,  8,  7,  6,  9,  1,  2,  0,  4,  5,  0,  6,  7,  0,  1 },
+	{ 1,  0,  3,  4,  5,  6,  7,  8,  0,  1,  0,  2,  3,  4,  5,  6,  7,  8,  9,  2,  0,  0,  3,  4,  5,  6,  7,  8,  9,  10,  0,  0,  3,  4,  5,  6,  7,  8,  9,  1,  0,  2,  0,  4,  5,  6,  7,  8,  0,  1 },
+	{ 1,  0,  3,  2,  1,  0,  9,  8,  0,  6,  5,  4,  3,  2,  7,  0,  9,  8,  7,  6,  5,  0,  3,  2,  1,  0,  9,  8,  7,  6,  5,  0,  3,  2,  1,  0,  9,  8,  7,  6,  5,  4,  0,  2,  1,  0,  9,  8,  0,  1 },
+	{ 1,  0,  2,  3,  4,  5,  6,  7,  0,  9,  1,  0,  2,  3,  4,  5,  6,  7,  8,  9,  1,  0,  2,  3,  4,  5,  6,  7,  8,  9,  1,  0,  2,  3,  4,  5,  6,  7,  8,  9,  1,  0,  0,  3,  4,  5,  6,  7,  0,  1 },
+	{ 1,  0,  7,  6,  5,  4,  3,  2,  0,  0,  9,  8,  7,  6,  5,  4,  3,  2,  1,  0,  9,  0,  7,  6,  5,  4,  3,  2,  1,  0,  9,  0,  7,  6,  5,  4,  3,  2,  1,  0,  9,  8,  0,  6,  5,  4,  3,  2,  0,  1 },
+	{ 1,  0,  1,  3,  0,  5,  6,  7,  0,  9,  3,  2,  1,  0,  5,  4,  6,  7,  8,  9,  2,  0,  10,  0,  5,  4,  6,  7,  8,  9,  10,  0,  2,  3,  4,  5,  6,  7,  8,  9,  0,  1,  0,  3,  4,  5,  6,  7,  0,  1 },
+	{ 1,  0,  2,  3,  4,  5,  6,  7,  0,  9,  1,  2,  3,  4,  5,  6,  7,  8,  9,  0,  1,  0,  3,  4,  5,  6,  7,  8,  9,  0,  10,  0,  3,  4,  5,  6,  7,  8,  9,  0,  1,  2,  0,  4,  5,  6,  7,  8,  0,  1 },
+	{ 1,  0,  3,  2,  1,  0,  9,  8,  0,  6,  5,  4,  3,  2,  1,  0,  9,  8,  7,  6,  5,  0,  3,  2,  1,  0,  9,  8,  7,  6,  5,  0,  3,  2,  1,  0,  9,  8,  7,  6,  5,  4,  0,  2,  1,  0,  9,  8,  0,  1 },
+	{ 1,  0,  2,  3,  4,  5,  6,  7,  0,  9,  1,  0,  2,  3,  4,  5,  6,  7,  8,  9,  10,  0,  2,  3,  4,  5,  6,  7,  8,  9,  9,  0,  2,  3,  4,  5,  6,  7,  8,  9,  1,  0,  0,  3,  4,  5,  6,  7,  0,  1 },
+	{ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1 },
+	{ 1,  0,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  0,  0,  1,  2,  3,  4,  5,  6,  7,  8,  0,  10, 0,  1,  2,  3,  4,  5,  6,  7,  8,  0,  10, 0,  1,  2,  3,  0,  1 },
+	{ 1,  0,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  0,  1 },
+	{ 1,  0,  4,  1,  0,  5,  9,  2,  0,  6,  1,  3,  0,  7,  5,  2,  9,  4,  6,  8,  0,  0,  0,  0,  0,  0,  0,  0,  0,  8,  1,  0,  3,  5,  2,  4,  6,  8,  9,  7,  2,  5,  0,  4,  6,  0,  3,  8,  0,  1 },
+	{ 1,  0,  1,  2,  3,  4,  5,  6,  0,  8,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  3,  2,  0,  1 },
+	{ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1 },
+	{ 1,  0,  1,  2,  3,  4,  5,  6,  0,  8,  9, 10,  0,  5,  2,  3,  4,  5,  6,  7,  8,  0, 10,  0,  1,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  4,  2,  0,  1 },
+	{ 1,  0,  4,  1,  0,  5,  9,  2,  0,  6,  6,  3,  0,  7,  5,  2,  9,  4,  6,  8,  0,  0,  3,  5,  7,  2,  2,  4,  6,  8,  8,  0,  3,  5,  2,  4,  6,  8,  9,  7,  2,  5,  0,  4,  6,  0,  3,  8,  0,  1 },
+	{ 1,  0,  1,  2,  3,  4,  5,  6,  0,  8,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  8,  0, 10,  0,  9,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  5,  2,  0,  1 },
+	{ 1,  0,  7,  1,  0,  5,  9,  2,  0,  6, 10,  3,  0,  7,  5,  2,  9,  4,  6,  8,  0,  0,  3,  5,  7, 10,  2,  4,  6,  8,  6,  0,  3,  5,  2,  4,  6,  8,  9,  7,  2,  5,  0,  4,  6,  0,  3,  8,  0,  1 },
+	{ 1,  0,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  0,  0,  7,  2,  3,  4,  5,  6,  7,  8,  0, 10,  0,  1,  2,  3,  4,  5,  6,  7,  8,  0, 10,  0,  1,  2,  3,  0,  1 },
+	{ 1,  0,  4,  2,  0,  5,  8,  7,  0,  9,  2,  3,  1,  4,  0,  5,  8,  7,  6,  9,  5,  0,  3,  4,  5,  0,  6,  7,  8,  9,  2,  0,  8,  4,  0,  5,  8,  7,  6,  9,  1,  2,  0,  4,  5,  0,  6,  7,  0,  1 },
+	{ 1,  0,  3,  4,  5,  6,  7,  8,  0,  8,  0,  2,  3,  4,  5,  6,  7,  8,  9,  7,  0,  0,  3,  4,  5,  6,  7,  8,  9,  4,  0,  0,  3,  4,  5,  6,  7,  8,  9,  1,  0,  2,  0,  4,  5,  6,  7,  8,  0,  1 },
+	{ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1 },
+	{ 1,  0,  2,  3,  4,  5,  6,  7,  0,  9,  3,  0,  2,  3,  4,  5,  6,  7,  8,  9,  2,  0,  2,  3,  4,  5,  6,  7,  8,  9,  9,  0,  2,  3,  4,  5,  6,  7,  8,  9,  1,  0,  0,  3,  4,  5,  6,  7,  0,  1 },
+	{ 1,  0,  7,  6,  5,  4,  3,  2,  0,  0,  9,  8,  7,  6,  5,  4,  3,  2,  1,  0,  9,  0,  7,  6,  5,  4,  3,  2,  1,  0,  9,  0,  7,  6,  5,  4,  3,  2,  1,  0,  9,  8,  0,  6,  5,  4,  3,  2,  0,  1 },
+	{ 1,  0,  1,  3,  0,  5,  6,  7,  0,  9,  3,  2,  5,  0,  5,  4,  6,  7,  8,  9,  2,  0,  1,  0,  5,  4,  6,  7,  8,  9,  7,  0,  2,  3,  4,  5,  6,  7,  8,  9,  0,  1,  0,  3,  4,  5,  6,  7,  0,  1 },
+	{ 1,  0,  2,  3,  4,  5,  6,  7,  0,  9,  6,  2,  3,  4,  5,  6,  7,  8,  9,  0,  0,  0,  3,  4,  5,  6,  7,  8,  9,  0,  5,  0,  3,  4,  5,  6,  7,  8,  9,  0,  1,  2,  0,  4,  5,  6,  7,  8,  0,  1 },
+	{ 1,  0,  3,  2,  2,  0,  9,  8,  0,  6,  5,  4,  3,  2,  7,  0,  9,  8,  7,  6,  5,  0,  3,  2,  5,  0,  9,  8,  7,  6,  5,  0,  3,  2,  1,  0,  9,  8,  7,  6,  5,  4,  0,  2,  1,  0,  9,  8,  0,  1 },
+	{ 1,  0,  2,  3,  4,  5,  6,  7,  0,  9,  9,  0,  2,  3,  4,  5,  6,  7,  8,  9,  8,  0,  2,  3,  4,  5,  6,  7,  8,  9,  4,  0,  2,  3,  4,  5,  6,  7,  8,  9,  1,  0,  0,  3,  4,  5,  6,  7,  0,  1 },
+	{ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1 },
+	{ 1,  0,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  3,  2,  3,  4,  5,  6,  7,  8,  9,  0,  0,  1,  2,  3,  4,  5,  6,  7,  8,  0,  10, 0,  1,  2,  3,  4,  5,  6,  7,  8,  0,  10, 0,  10,  2,  3,  0,  1 },
+	{ 1,  0,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  0,  2,  2,  2,  2,  2,  0,  1 },
+	{ 1,  0,  4,  3,  0,  5,  9,  2,  0,  6,  3,  3,  0,  7,  5,  2,  9,  4,  6,  8,  0,  0,  3,  5,  7,  1,  2,  4,  6,  8,  3,  0,  3,  5,  2,  4,  6,  8,  9,  7,  2,  5,  0,  4,  6,  0,  3,  8,  0,  1 },
+	{ 1,  0,  9,  2,  3,  4,  5,  6,  0,  8,  9, 10,  0,  8,  2,  3,  4,  5,  6,  7,  8,  0, 10,  0,  3,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  10,  2,  0,  1 },
+	{ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1 },
+	{ 1,  0,  5,  2,  3,  4,  5,  6,  0,  8,  9, 10,  0,  9,  2,  3,  4,  5,  6,  7,  8,  0, 10,  0,  2,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  1,  2,  3,  4,  5,  6,  7,  0,  9, 10,  0,  10,  2,  0,  1 },
+	{ 1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1 },
+	{ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1, 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1, 1,  1,  1,  1,  1,  1 }
+	};
+
+	// Spawn del Director
+	ADirector* Director = GetWorld()->SpawnActor<ADirector>();
+
+	// Spawn del Builder
+	ALaberintoConcretoBuilder* Builder = GetWorld()->SpawnActor<ALaberintoConcretoBuilder>();
+
+	// Asignar el builder al director
+	Director->SetBuilder(Cast<IILaberintoBuilder>(Builder));
+
+	// Construcción del laberinto usando la matriz
+	Director->ConstruirLaberinto(Matriz);
+
+
+	/*ADirectorEjercito* ADirectorA = GetWorld()->SpawnActor<ADirectorEjercito>();
 	FVector Posicion = FVector(500.f, 500.f, 100.f);
 
 	AEjercitoAcuaticoBuilder* AEjercitoA = GetWorld()->SpawnActor<AEjercitoA>(AEjercitoAcuaticoBuilder::StaticClass(), Posicion, FRotator::ZeroRotator);
@@ -58,6 +127,8 @@ void ABomberman_012025GameMode::BeginPlay()
 	ADirectorA->Set();
 
 	AEjercitoA* Ejercito = Builder->GetEjercito();
+	*/
+
 
 	/*
 	ADirector* ALaberintoDirector = GetWorld()->SpawnActor<ADirector>();
@@ -149,7 +220,7 @@ void ABomberman_012025GameMode::BeginPlay()
 
 	// la otra pregunta del parcial pregunta 1 
 	//aqui queria que el bloque madera aparezca en el bloque mas cercano al borde pero tiene un error y aparece incluso en os bloques madera del centro 
-
+	/*
 	if (aposicionesLibresMadera.Num() > 0) {
 		FVector posicionMasCercana;
 		float distanciaMinima = FLT_MAX; // Variable para almacenar la menor distancia
@@ -193,6 +264,7 @@ void ABomberman_012025GameMode::BeginPlay()
 			personaje->SetActorLocation(posicionMasCercana);
 		}
 	}
+	*/
 	//if (PosicionesValidasPersonaje.Num() > 0)
 	//{
 	//	int32 Index = FMath::RandRange(0, PosicionesValidasPersonaje.Num() - 1);
@@ -220,7 +292,7 @@ void ABomberman_012025GameMode::BeginPlay()
 
 void ABomberman_012025GameMode::PosicionarEnBloqueMaderaConMasAdyacentes()
 {
-
+/*
 	int32 MaxAdyacentes = -1;
 	FVector PosicionBloqueSeleccionado;
 
@@ -256,7 +328,7 @@ void ABomberman_012025GameMode::PosicionarEnBloqueMaderaConMasAdyacentes()
 		PosicionSiguienteBloque = PosicionBloqueSeleccionado;
 
 	}
-
+	*/
 }
 /*
 void ABomberman_012025GameMode::SpawnBloque(FVector posicionBloque, int32 tipoBloque)
@@ -334,6 +406,7 @@ void ABomberman_012025GameMode::DestruirBloque()
  //aqui modifique para que aparezca el personaje en los bloques madera smplemente cambiando las posiciones validas de 0 a 3 que es el bloque de madera 
 void ABomberman_012025GameMode::SpawnPersonaje()
 {
+	/*
 	PosicionesValidasPersonaje.Empty();
 	for (int i = 1; i <= 50; i++) {
 		for (int j = 1; j <= 50; j++) {
@@ -367,7 +440,7 @@ void ABomberman_012025GameMode::SpawnPersonaje()
 		};
 
 	};
-
+	*/
 }
 
 void ABomberman_012025GameMode::SpawnEnemigo()
@@ -451,11 +524,12 @@ void ABomberman_012025GameMode::IniciarEliminarBloque()
 
 void ABomberman_012025GameMode::SpawnLaberinto()
 {
+	/*
 	PosicionesValidas.Empty();
 	// Spawnear bloques según el valor de aMapaBloques
 	for (int i = 0; i < 50; i++) {
 		for (int j = 0; j < 50; j++) {
-			FVector Posicion = FVector(110.0f + (i + 1) * 100.0f, -1250.0f + (j + 1) * 100.0f, 190.0f);//espacio entre bloques *
+			FVector Posicion = FVector(110.0f + (i + 1) * 150.0f, -1250.0f + (j + 1) * 150.0f, 190.0f);//espacio entre bloques * aumento de 100 a 150
 
 			switch (aMapaBloques[i][j]) {
 			case 1:
@@ -503,7 +577,7 @@ void ABomberman_012025GameMode::SpawnLaberinto()
 			};
 		};
 	};
-
+	*/
 
 }
 
@@ -553,4 +627,33 @@ void ABomberman_012025GameMode::CambiarDireccion()
 	// Mostrar mensaje en pantalla
 	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, bDireccionEnX ? TEXT("Moviendo en X") : TEXT("Moviendo en Y"));
 
+}
+
+void ABomberman_012025GameMode::CrearEjercitoAcuatico()
+{
+	// Crear el director de ejercito
+	ADirectorEjercito* DirectorEjercito = GetWorld()->SpawnActor<ADirectorEjercito>(ADirectorEjercito::StaticClass(), FVector(500.f, 500.f,110.f), FRotator::ZeroRotator);
+
+	// Crear el builder de ejercito acuático
+	AEjercitoAcuaticoBuilder* EjercitoBuilder = GetWorld()->SpawnActor<AEjercitoAcuaticoBuilder>(AEjercitoAcuaticoBuilder::StaticClass(), FVector(500.f, 500.f, 100.f), FRotator::ZeroRotator);
+
+	// Configurar el director con el builder
+	DirectorEjercito->SetBuilder(EjercitoBuilder);
+
+	// Elegir una posición inicial (ejemplo: en el centro del mapa)
+	FVector PosicionInicial = FVector(0.0f, 0.0f, 100.0f);
+
+	// Construir el ejercito acuático
+	DirectorEjercito->ConstruirEjercitoAcuatico(GetWorld(),PosicionInicial);
+
+	// Obtener el ejercito construido
+	AEjercitoA* Ejercito = EjercitoBuilder->GetEjercito();
+	if (Ejercito)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("Ejército acuático creado exitosamente."));
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Error al crear el ejército acuático."));
+	}
 }

@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeBloqueHielo() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABloqueHielo_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "BloqueHielo.h" },
 		{ "ModuleRelativePath", "BloqueHielo.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueHielo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueHielo, 1295212645);
+	IMPLEMENT_CLASS(ABloqueHielo, 3503912514);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueHielo>()
 	{
 		return ABloqueHielo::StaticClass();

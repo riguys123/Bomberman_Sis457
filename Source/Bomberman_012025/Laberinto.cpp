@@ -25,23 +25,10 @@ void ALaberinto::Tick(float DeltaTime)
 
 }
 
-void ALaberinto::SetBomba(int Cantidad)
+void ALaberinto::AgregarElemento(AActor* Elemento)
 {
-	// Implementación de la función SetBomba
+	if (Elemento)
+	{
+		Elementos.Add(Elemento);
+	}
 }
-void ALaberinto::SetEnemigo(int Cantidad)
-{
-	// Implementación de la función SetEnemigo
-}
-void ALaberinto::SetPuerta(int Cantidad)
-{
-	// Implementación de la función SetPuerta
-}
-void ALaberinto::SetBloque_Padre(int Cantidad)
-{
-	// Implementación de la función SetBloque_Padre
-}
-
-
-
-

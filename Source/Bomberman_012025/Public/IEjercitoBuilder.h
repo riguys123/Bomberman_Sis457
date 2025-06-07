@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "EjercitoA.h"
 #include "UObject/Interface.h"
 #include "IEjercitoBuilder.generated.h"
 
@@ -13,7 +12,7 @@ class UIEjercitoBuilder : public UInterface
 {
 	GENERATED_BODY()
 };
-
+class AEjercitoA;
 
 class BOMBERMAN_012025_API IIEjercitoBuilder
 {
@@ -22,9 +21,9 @@ class BOMBERMAN_012025_API IIEjercitoBuilder
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
   
-    virtual void Reset() = 0;
-    virtual void AgregarComandante() = 0;
-    virtual void AgregarTipo1() = 0;
-    virtual void AgregarTipo2() = 0;
+	virtual void Reset() = 0;
+	virtual void AgregarComandante() = 0;
+	virtual void AgregarAEnemigoAcuaticoPezGlobo1() = 0;
+	virtual void AgregarAEnemigoAcuaticoPezGlobo2() = 0;
     virtual AEjercitoA* GetEjercito() = 0;
 };

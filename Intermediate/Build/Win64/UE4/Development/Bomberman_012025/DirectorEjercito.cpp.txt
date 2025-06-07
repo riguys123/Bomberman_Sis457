@@ -1,0 +1,5 @@
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4\Development\Bomberman_012025\Definitions.Bomberman_012025.h
+C:\Bomberman_012025\Source\Bomberman_012025\Public\DirectorEjercito.h
+C:\Bomberman_012025\Source\Bomberman_012025\Public\IEjercitoBuilder.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4\Inc\Bomberman_012025\IEjercitoBuilder.generated.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4\Inc\Bomberman_012025\DirectorEjercito.generated.h

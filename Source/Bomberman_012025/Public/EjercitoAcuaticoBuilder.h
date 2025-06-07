@@ -5,8 +5,9 @@
 #include "CoreMinimal.h"
 #include "IEjercitoBuilder.h"
 #include "EjercitoA.h"
-#include "EnemigoAcuaticoAnguila.h"
-#include "EnemigoAcuaticoPezGlobo.h"
+#include "IEjercitoBuilder.h"
+#include "Bomberman_012025/EnemigoAcuaticoAnguila.h"
+#include "Bomberman_012025/EnemigoAcuaticoPezGlobo.h"
 #include "GameFramework/Actor.h"
 #include "EjercitoAcuaticoBuilder.generated.h"
 
@@ -25,12 +26,12 @@ private:
 	FVector PosicionBase;
 
 public:
-	EjercitoAcuaticoBuilder(UWorld* InMundo, FVector PosicionInicial);
+	AEjercitoAcuaticoBuilder(UWorld* InMundo, FVector PosicionInicial);
 
 	void Reset()override;
-	void AgregarComandanteA()override;
-	void AgregarEnemigoAcuaticoPezGlobo1()override;
-	void AgregarEnemigoAcuaticoPezGlobo2()override;
+	void AgregarComandante()override;
+	void AgregarAEnemigoAcuaticoPezGlobo1()override;
+	void AgregarAEnemigoAcuaticoPezGlobo2()override;
 	AEjercitoA* GetEjercito() override;
 
 protected:

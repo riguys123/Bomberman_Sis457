@@ -4,8 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "ILaberinto.h"
-#include "ILaberintoBuilder.h"	
+#include "ILaberintoBuilder.h"
 #include "Director.generated.h"
 
 UCLASS()
@@ -25,15 +24,12 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-public:
-	void SetBuilder(TScriptInterface<IILaberintoBuilder> Builder);
-	void SetLaberinto(TScriptInterface<IILaberinto> Laberinto);
-
-	void MandarConstruir();
-
 private:
-	TScriptInterface<IILaberintoBuilder> LB;
-	TScriptInterface<IILaberinto> LA;
+	IILaberintoBuilder* Builder;
+
+public:
+	void SetBuilder(IILaberintoBuilder* InBuilder);
+	void ConstruirLaberinto(const TArray<TArray<int32>>& Matriz);
 
 
 };

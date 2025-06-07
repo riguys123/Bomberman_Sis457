@@ -1,0 +1,19 @@
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4\Development\Bomberman_012025\Definitions.Bomberman_012025.h
+C:\Bomberman_012025\Source\Bomberman_012025\Public\EjercitoAcuaticoBuilder.h
+C:\Bomberman_012025\Source\Bomberman_012025\Public\IEjercitoBuilder.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4\Inc\Bomberman_012025\IEjercitoBuilder.generated.h
+C:\Bomberman_012025\Source\Bomberman_012025\Public\EjercitoA.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4\Inc\Bomberman_012025\EjercitoA.generated.h
+C:\Bomberman_012025\Source\Bomberman_012025/EnemigoAcuaticoAnguila.h
+C:\Bomberman_012025\Source\Bomberman_012025\Enemigo.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4\Inc\Engine\CharacterMovementReplication.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4\Inc\Engine\RootMotionSource.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4\Inc\Engine\Character.generated.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4\Inc\Bomberman_012025\Enemigo.generated.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4\Inc\Bomberman_012025\EnemigoAcuaticoAnguila.generated.h
+C:\Bomberman_012025\Source\Bomberman_012025/EnemigoAcuaticoPezGlobo.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4\Inc\Bomberman_012025\EnemigoAcuaticoPezGlobo.generated.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4\Inc\Bomberman_012025\EjercitoAcuaticoBuilder.generated.h

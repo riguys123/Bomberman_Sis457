@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "Bomberman_012025",
-			"Path": "C:\\Bomberman_012025\\Bomberman_012025\\Source\\Bomberman_012025.Target.cs",
+			"Path": "C:\\Bomberman_012025\\Source\\Bomberman_012025.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "Bomberman_012025Editor",
-			"Path": "C:\\Bomberman_012025\\Bomberman_012025\\Source\\Bomberman_012025Editor.Target.cs",
+			"Path": "C:\\Bomberman_012025\\Source\\Bomberman_012025Editor.Target.cs",
 			"Type": "Editor"
 		}
 	]

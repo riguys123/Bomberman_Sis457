@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Bomberman_012025\\Bomberman_012025\\Source\\Bomberman_012025\\Bomberman_012025.Build.cs",
-		"C:\\Bomberman_012025\\Bomberman_012025\\Source\\Bomberman_012025.Target.cs",
-		"C:\\Bomberman_012025\\Bomberman_012025\\Source\\Bomberman_012025Editor.Target.cs"
+		"C:\\Bomberman_012025\\Source\\Bomberman_012025\\Bomberman_012025.Build.cs",
+		"C:\\Bomberman_012025\\Source\\Bomberman_012025.Target.cs",
+		"C:\\Bomberman_012025\\Source\\Bomberman_012025Editor.Target.cs"
 	],
 	"EngineVersion": "4.27.2"
 }

@@ -21,11 +21,5 @@ class BOMBERMAN_012025_API IILaberinto
 	GENERATED_BODY()
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
-public:
-   
-	virtual void SetBomba(int Cantidad) = 0;
-	virtual void SetEnemigo(int Cantidad) = 0;
-	virtual void SetPuerta(int Cantidad) = 0;
-	virtual void SetBloque_Padre(int Cantidad) = 0;
 
 };

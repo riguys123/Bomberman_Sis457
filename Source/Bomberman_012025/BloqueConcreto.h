@@ -13,4 +13,14 @@ class BOMBERMAN_012025_API ABloqueConcreto : public ABloque_Padre
 	GENERATED_BODY()
 public:
 	ABloqueConcreto();
+
+protected:
+	virtual void BeginPlay() override;
+	UParticleSystemComponent* ParticleSystem;
+public:
+	virtual void Tick(float DeltaTime) override;
+
+public:
+	bool bPuedeGirar;
+	float RotationSpeed;
 };

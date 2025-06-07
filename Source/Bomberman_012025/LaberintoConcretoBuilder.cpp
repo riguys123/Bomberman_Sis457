@@ -1,5 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "LaberintoConcretoBuilder.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/StaticMeshComponent.h"
@@ -14,8 +15,6 @@
 #include "BloqueElectrico.h"
 #include "BloqueHielo.h"
 #include "BloqueHongo.h"
-#include "LaberintoConcretoBuilder.h"
-
 
 // Sets default values
 ALaberintoConcretoBuilder::ALaberintoConcretoBuilder()
@@ -39,77 +38,112 @@ void ALaberintoConcretoBuilder::Tick(float DeltaTime)
 
 }
 
+void ALaberintoConcretoBuilder::ConstruirMatriz(const TArray<TArray<int32>>& Matriz)
+{
+    // Guardamos la matriz
+    aMapaBloques = Matriz;
 
-void ALaberintoConcretoBuilder::SetBomba(int Cantidad)
-{
-	// Implementación de la función SetBomba
-}
-void ALaberintoConcretoBuilder::SetEnemigo(int Cantidad)
-{
-	// Implementación de la función SetEnemigo
-}
-void ALaberintoConcretoBuilder::SetPuerta(int Cantidad)
-{
-	// Implementación de la función SetPuerta
-}
-void ALaberintoConcretoBuilder::SetBloque_Padre(int Cantidad)
-{
-	// Implementación de la función SetBloque_Padre
+    // Limpiamos posiciones válidas
+    PosicionesValidas.Empty();
+
+    // Recorremos la matriz para spawnear bloques
+    for (int i = 0; i < aMapaBloques.Num(); i++)
+    {
+        for (int j = 0; j < aMapaBloques[i].Num(); j++)
+        {
+            FVector Posicion = FVector(110.0f + (i + 1) * 150.0f, -1250.0f + (j + 1) * 150.0f, 190.0f);
+
+            switch (aMapaBloques[i][j])
+            {
+            case 1:
+                GetWorld()->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), Posicion, FRotator::ZeroRotator);
+                break;
+            case 2:
+                GetWorld()->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), Posicion, FRotator::ZeroRotator);
+                break;
+            case 3:
+                GetWorld()->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), Posicion, FRotator::ZeroRotator);
+                break;
+            case 4:
+                GetWorld()->SpawnActor<ABloqueBurbuja>(ABloqueBurbuja::StaticClass(), Posicion, FRotator::ZeroRotator);
+                break;
+            case 5:
+                GetWorld()->SpawnActor<ABloqueElectrico>(ABloqueElectrico::StaticClass(), Posicion, FRotator::ZeroRotator);
+                break;
+            case 6:
+                GetWorld()->SpawnActor<ABloqueHongo>(ABloqueHongo::StaticClass(), Posicion, FRotator::ZeroRotator);
+                break;
+            case 7:
+                GetWorld()->SpawnActor<ABloqueLava>(ABloqueLava::StaticClass(), Posicion, FRotator::ZeroRotator);
+                break;
+            case 8:
+                GetWorld()->SpawnActor<ABloqueConcreto>(ABloqueConcreto::StaticClass(), Posicion, FRotator::ZeroRotator);
+                break;
+            case 9:
+                GetWorld()->SpawnActor<ABloqueArena>(ABloqueArena::StaticClass(), Posicion, FRotator::ZeroRotator);
+                break;
+            case 10:
+                GetWorld()->SpawnActor<ABloqueHielo>(ABloqueHielo::StaticClass(), Posicion, FRotator::ZeroRotator);
+                break;
+            default:
+                break;
+            }
+        }
+    }
+
+    // Guardamos posiciones donde no hay bloque (valor 0)
+    for (int i = 0; i < aMapaBloques.Num(); i++)
+    {
+        for (int j = 0; j < aMapaBloques[i].Num(); j++)
+        {
+            if (aMapaBloques[i][j] == 0)
+            {
+                FVector Pos = FVector(110.0f + (i + 1) * 100.0f, -1250.0f + (j + 1) * 100.0f, 190.0f);
+                PosicionesValidas.Add(Pos);
+            }
+        }
+    }
+    //Laberinto = GetWorld()->SpawnActor<ALaberinto>();
+
+    //const float Espaciado = 100.f;
+
+    //for (int32 Y = 0; Y < Matriz.Num(); ++Y)
+    //{
+    //    for (int32 X = 0; X < Matriz[Y].Num(); ++X)
+    //    {
+    //        FVector Posicion(X * Espaciado, Y * Espaciado, 0.f);
+    //        AActor* Muro = nullptr;
+
+    //        switch (Matriz[Y][X])
+    //        {
+    //        case 1: Muro = GetWorld()->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+    //        case 2: Muro = GetWorld()->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+    //        case 3: Muro = GetWorld()->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+    //        case 4: Muro = GetWorld()->SpawnActor<ABloqueBurbuja>(ABloqueBurbuja::StaticClass(), Posicion, FRotator::ZeroRotator);break;
+    //        case 5: Muro = GetWorld()->SpawnActor<ABloqueElectrico>(ABloqueElectrico::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+    //        case 6: Muro = GetWorld()->SpawnActor<ABloqueHongo>(ABloqueHongo::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+    //        case 7: Muro = GetWorld()->SpawnActor<ABloqueLava>(ABloqueLava::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+    //        case 8: Muro = GetWorld()->SpawnActor<ABloqueConcreto>(ABloqueConcreto::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+    //        case 9: Muro = GetWorld()->SpawnActor<ABloqueArena>(ABloqueArena::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+    //        case 10: Muro = GetWorld()->SpawnActor<ABloqueHielo>(ABloqueHielo::StaticClass(), Posicion, FRotator::ZeroRotator); break;
+    //        default: break;
+    //        }
+
+    //        if (Muro)
+    //        {
+    //            Laberinto->AgregarElemento(Muro);
+    //        }
+    //    }
+    //}
 }
 
-void ALaberintoConcretoBuilder::SpawnLaberinto()
+ALaberinto* ALaberintoConcretoBuilder::ObtenerLaberinto()
 {
-	//PosicionesValidas.Empty();
-	// Spawnear bloques según el valor de aMapaBloques
-	for (int i = 0; i < 50; i++) {
-		for (int j = 0; j < 50; j++) {
-			FVector Posicion = FVector(110.0f + (i + 1) * 100.0f, -1250.0f + (j + 1) * 100.0f, 190.0f);//espacio entre bloques *
-
-			switch (aMapaBloques[i][j]) {
-			case 1:
-				GetWorld()->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), Posicion, FRotator::ZeroRotator);
-				break;
-			case 2:
-				GetWorld()->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), Posicion, FRotator::ZeroRotator);
-				break;
-			case 3:
-				GetWorld()->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), Posicion, FRotator::ZeroRotator);
-				break;
-			case 4:
-				GetWorld()->SpawnActor<ABloqueBurbuja>(ABloqueBurbuja::StaticClass(), Posicion, FRotator::ZeroRotator);
-				break;
-			case 5:
-				GetWorld()->SpawnActor<ABloqueElectrico>(ABloqueElectrico::StaticClass(), Posicion, FRotator::ZeroRotator);
-				break;
-			case 6:
-				GetWorld()->SpawnActor<ABloqueHongo>(ABloqueHongo::StaticClass(), Posicion, FRotator::ZeroRotator);
-				break;
-			case 7:
-				GetWorld()->SpawnActor<ABloqueLava>(ABloqueLava::StaticClass(), Posicion, FRotator::ZeroRotator);
-				break;
-			case 8:
-				GetWorld()->SpawnActor<ABloqueConcreto>(ABloqueConcreto::StaticClass(), Posicion, FRotator::ZeroRotator);
-				break;
-			case 9:
-				GetWorld()->SpawnActor<ABloqueArena>(ABloqueArena::StaticClass(), Posicion, FRotator::ZeroRotator);
-				break;
-			case 10:
-				GetWorld()->SpawnActor<ABloqueHielo>(ABloqueHielo::StaticClass(), Posicion, FRotator::ZeroRotator);
-				break;
-			default:
-				break;
-			};
-		};
-	};
-
-	// Crear lista de posiciones válidas (donde Laberinto1[i][j] == 0)
-	//for (int i = 0; i < 50; i++) {
-	//	for (int j = 0; j < 50; j++) {
-	//		if (aMapaBloques[i][j] == 0) {
-	//			FVector Pos = FVector(110.0f + (i + 1) * 100.0f, -1250.0f + (j + 1) * 100.0f, 190.0f);
-	//			PosicionesValidas.Add(Pos);
-	//		};
-	//	};
-	//};
+	return Laberinto;
 }
-	
+
+const TArray<FVector>& ALaberintoConcretoBuilder::GetPosicionesValidas() const
+{
+	return PosicionesValidas;
+}
+
