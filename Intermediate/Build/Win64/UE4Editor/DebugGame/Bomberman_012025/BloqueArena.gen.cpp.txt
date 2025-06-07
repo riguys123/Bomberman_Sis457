@@ -3,5 +3,6 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UOb
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 C:\Bomberman_012025\Source\Bomberman_012025/BloqueArena.h
 C:\Bomberman_012025\Source\Bomberman_012025\Bloque_Padre.h
+C:\Bomberman_012025\Source\Bomberman_012025\Public\ETipoBloque.h
 C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Bloque_Padre.generated.h
 C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\BloqueArena.generated.h

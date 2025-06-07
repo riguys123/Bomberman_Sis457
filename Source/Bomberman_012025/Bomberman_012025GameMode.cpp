@@ -30,7 +30,7 @@
 #include "LaberintoConcretoBuilder.h"
 #include "EjercitoAcuaticoBuilder.h"
 #include "DirectorEjercito.h"
-
+#include "FabricaBloques.h"
 
 
 ABomberman_012025GameMode::ABomberman_012025GameMode()
@@ -48,7 +48,29 @@ void ABomberman_012025GameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-    //builder de laberinto
+
+	//-------------------------------------------------------------------------------FACTORY METHOD
+	// 1. Spawnea la fábrica en el mundo
+	FActorSpawnParameters SpawnParams;
+	SpawnParams.Name = TEXT("FabricaDeBloques");
+
+	AFabricaBloques* Fabrica = GetWorld()->SpawnActor<AFabricaBloques>(
+		AFabricaBloques::StaticClass(),
+		FVector(0.f, 0.f, 0.f),           // Posición donde aparece la fábrica
+		FRotator::ZeroRotator,
+		SpawnParams
+	);
+
+	// 2. Verifica que la fábrica se creó correctamente
+	if (Fabrica)
+	{
+		// 3. Crea un bloque de tipo Ladrillo en la posición (100, 100, 0)
+		Fabrica->CrearBloque(ETipoBloque::Ladrillo, FVector(100.f, 100.f, 0.f), 1);
+	}
+
+
+
+    //------------------------------------------------------------------------------BUILDER laberinto
 	// Ejemplo de matriz (puedes cargarla desde archivo o generarla)
 	TArray<TArray<int32>> Matriz = {
 
@@ -140,7 +162,7 @@ void ABomberman_012025GameMode::BeginPlay()
 
 	ALaberintoDirector->MandarConstruir();
 	*/
-	GEngine->AddOnScreenDebugMessage(-1, -1, FColor::Red, TEXT("Bloque Spawning"));
+	//GEngine->AddOnScreenDebugMessage(-1, -1, FColor::Red, TEXT("Bloque Spawning"));
 	SpawnLaberinto();
 	SpawnPersonaje();
 	PosicionarEnBloqueMaderaConMasAdyacentes();

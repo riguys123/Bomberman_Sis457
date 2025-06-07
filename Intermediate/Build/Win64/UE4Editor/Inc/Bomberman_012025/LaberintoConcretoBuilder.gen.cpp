@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeLaberintoConcretoBuilder() {}
 	BOMBERMAN_012025_API UClass* Z_Construct_UClass_ALaberintoConcretoBuilder();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Bomberman_012025();
+	BOMBERMAN_012025_API UClass* Z_Construct_UClass_AFabricaBloques_NoRegister();
 	BOMBERMAN_012025_API UClass* Z_Construct_UClass_UILaberintoBuilder_NoRegister();
 // End Cross Module References
 	void ALaberintoConcretoBuilder::StaticRegisterNativesALaberintoConcretoBuilder()
@@ -32,6 +33,11 @@ void EmptyLinkFunctionForGeneratedCodeLaberintoConcretoBuilder() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FabricaBloques_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FabricaBloques;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -48,6 +54,15 @@ void EmptyLinkFunctionForGeneratedCodeLaberintoConcretoBuilder() {}
 		{ "ToolTip", "UStaticMesh* Bloque_PadreMesh;" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::NewProp_FabricaBloques_MetaData[] = {
+		{ "ModuleRelativePath", "LaberintoConcretoBuilder.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::NewProp_FabricaBloques = { "FabricaBloques", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ALaberintoConcretoBuilder, FabricaBloques), Z_Construct_UClass_AFabricaBloques_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::NewProp_FabricaBloques_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::NewProp_FabricaBloques_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::NewProp_FabricaBloques,
+	};
 		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UILaberintoBuilder_NoRegister, (int32)VTABLE_OFFSET(ALaberintoConcretoBuilder, IILaberintoBuilder), false },
 		};
@@ -60,11 +75,11 @@ void EmptyLinkFunctionForGeneratedCodeLaberintoConcretoBuilder() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::PropPointers,
 		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::PropPointers),
 		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ALaberintoConcretoBuilder_Statics::Class_MetaDataParams))
@@ -78,7 +93,7 @@ void EmptyLinkFunctionForGeneratedCodeLaberintoConcretoBuilder() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ALaberintoConcretoBuilder, 335897453);
+	IMPLEMENT_CLASS(ALaberintoConcretoBuilder, 2311067753);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ALaberintoConcretoBuilder>()
 	{
 		return ALaberintoConcretoBuilder::StaticClass();

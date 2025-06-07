@@ -40,6 +40,40 @@ void ALaberintoConcretoBuilder::Tick(float DeltaTime)
 
 void ALaberintoConcretoBuilder::ConstruirMatriz(const TArray<TArray<int32>>& Matriz)
 {
+    /*if (!FabricaBloques) return;
+
+    aMapaBloques = Matriz;
+    PosicionesValidas.Empty();
+
+    const float Espaciado = 150.f;
+    const FVector Offset = FVector(110.f, -1250.f, 190.f);
+
+    Laberinto = GetWorld()->SpawnActor<ALaberinto>(ALaberinto::StaticClass());
+
+    for (int32 i = 0; i < aMapaBloques.Num(); i++)
+    {
+        for (int32 j = 0; j < aMapaBloques[i].Num(); j++)
+        {
+            int32 TipoBloque = aMapaBloques[i][j];
+
+            FVector Posicion = Offset + FVector(i * Espaciado, j * Espaciado, 0.f);
+            int32 ID = i * 100 + j;
+
+            if (TipoBloque >= 1 && TipoBloque <= 10)
+            {
+                ABloque_Padre* Bloque = FabricaBloques->CrearBloque(static_cast<ETipoBloque>(TipoBloque), Posicion, ID);
+                if (Bloque && Laberinto)
+                {
+                    Laberinto->AgregarBloque(Bloque);
+                }
+            }
+            else if (TipoBloque == 0)
+            {
+                PosicionesValidas.Add(Posicion);
+            }
+        }
+    }*/
+  
     // Guardamos la matriz
     aMapaBloques = Matriz;
 
@@ -103,6 +137,7 @@ void ALaberintoConcretoBuilder::ConstruirMatriz(const TArray<TArray<int32>>& Mat
             }
         }
     }
+    
     //Laberinto = GetWorld()->SpawnActor<ALaberinto>();
 
     //const float Espaciado = 100.f;
@@ -145,5 +180,15 @@ ALaberinto* ALaberintoConcretoBuilder::ObtenerLaberinto()
 const TArray<FVector>& ALaberintoConcretoBuilder::GetPosicionesValidas() const
 {
 	return PosicionesValidas;
+}
+
+void ALaberintoConcretoBuilder::SetFabrica(AFabricaBloques* NuevaFabrica)
+{
+    FabricaBloques = NuevaFabrica;
+}
+
+void ALaberintoConcretoBuilder::EstablecerFabricaBloques(AFabricaBloques* Fabrica)
+{
+    this->FabricaBloques = Fabrica;
 }
 

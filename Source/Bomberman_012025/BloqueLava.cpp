@@ -33,6 +33,9 @@ ABloqueLava::ABloqueLava()
 		ParticulasLava->SetTemplate(LavaFX.Object);
 	}
 	TiempoLava = 0.f;
+
+	// Efecto de daño
+	UE_LOG(LogTemp, Warning, TEXT("Bloque de lava activado"));
 }
 
 void ABloqueLava::BeginPlay()

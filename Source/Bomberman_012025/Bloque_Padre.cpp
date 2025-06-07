@@ -61,3 +61,13 @@ void ABloque_Padre::AjustarTamano(FVector NuevoTamano)
 {
 	MallaBloque_Padre->SetWorldScale3D(NuevoTamano);
 }
+
+void ABloque_Padre::SetTipoBloque(ETipoBloque NuevoTipo)
+{
+	TipoBloque = NuevoTipo;
+}
+
+ETipoBloque ABloque_Padre::GetTipoBloque() const
+{
+	return TipoBloque;
+}

@@ -8,4 +8,11 @@ C:\Bomberman_012025\Source\Bomberman_012025\Laberinto.h
 C:\Bomberman_012025\Source\Bomberman_012025\ILaberinto.h
 C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\ILaberinto.generated.h
 C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Laberinto.generated.h
+C:\Bomberman_012025\Source\Bomberman_012025\Public\FabricaBloques.h
+C:\Bomberman_012025\Source\Bomberman_012025\Public\ETipoBloque.h
+C:\Bomberman_012025\Source\Bomberman_012025/Bloque_Padre.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Bloque_Padre.generated.h
+C:\Bomberman_012025\Source\Bomberman_012025\Public\IFabricaBloques.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\IFabricaBloques.generated.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\FabricaBloques.generated.h
 C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\LaberintoConcretoBuilder.generated.h

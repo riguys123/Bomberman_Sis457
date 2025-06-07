@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueBurbuja() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueBurbuja, 2993873924);
+	IMPLEMENT_CLASS(ABloqueBurbuja, 1476892134);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueBurbuja>()
 	{
 		return ABloqueBurbuja::StaticClass();

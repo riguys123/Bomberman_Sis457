@@ -32,3 +32,11 @@ void ALaberinto::AgregarElemento(AActor* Elemento)
 		Elementos.Add(Elemento);
 	}
 }
+
+void ALaberinto::AgregarBloque(AActor* Bloque)
+{
+	if (Bloque)
+	{
+		Elementos.Add(Bloque);
+	}
+}

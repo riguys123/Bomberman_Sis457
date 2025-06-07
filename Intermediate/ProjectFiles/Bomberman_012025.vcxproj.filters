@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Bomberman_012025.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{4F813EB7-7CD7-4365-973E-5B0BD42DFD05}</UniqueIdentifier>
+      <UniqueIdentifier>{8A0FB1E7-82CD-4907-B461-73B240C383B0}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Bomberman_012025.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\Temp.txt" />
     <Filter Include="Config">
-      <UniqueIdentifier>{6E9A33BC-17BC-4D11-96B9-35A56175A773}</UniqueIdentifier>
+      <UniqueIdentifier>{9C42D8C9-2D0A-426B-B3D4-8DACF06684D9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -33,7 +33,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Bomberman_012025">
-      <UniqueIdentifier>{D2511277-60EC-4948-8851-AD373D696AD3}</UniqueIdentifier>
+      <UniqueIdentifier>{3351DA90-7496-499A-815D-69917FB1EBC2}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Bomberman_012025\BloqueAcero.cpp">
       <Filter>Source\Bomberman_012025</Filter>
@@ -219,7 +219,7 @@
       <Filter>Source\Bomberman_012025</Filter>
     </ClInclude>
     <Filter Include="Source\Bomberman_012025\Private">
-      <UniqueIdentifier>{70CA56D9-6AE5-490C-9191-C7CC61A8AE09}</UniqueIdentifier>
+      <UniqueIdentifier>{ED5AA12A-10C2-40D0-9EA8-406309DF612E}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\DirectorEjercito.cpp">
       <Filter>Source\Bomberman_012025\Private</Filter>
@@ -230,11 +230,20 @@
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\EjercitoAcuaticoBuilder.cpp">
       <Filter>Source\Bomberman_012025\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Bomberman_012025\Private\ETipoBloque.cpp">
+      <Filter>Source\Bomberman_012025\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Bomberman_012025\Private\FabricaBloques.cpp">
+      <Filter>Source\Bomberman_012025\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\IEjercitoBuilder.cpp">
       <Filter>Source\Bomberman_012025\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Bomberman_012025\Private\IFabricaBloques.cpp">
+      <Filter>Source\Bomberman_012025\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\Bomberman_012025\Public">
-      <UniqueIdentifier>{D453ABE8-C2B3-4F41-AB12-5576D2A0D134}</UniqueIdentifier>
+      <UniqueIdentifier>{75885126-263C-48F5-AAED-3675E0275F32}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\DirectorEjercito.h">
       <Filter>Source\Bomberman_012025\Public</Filter>
@@ -245,7 +254,16 @@
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\EjercitoAcuaticoBuilder.h">
       <Filter>Source\Bomberman_012025\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Bomberman_012025\Public\ETipoBloque.h">
+      <Filter>Source\Bomberman_012025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Bomberman_012025\Public\FabricaBloques.h">
+      <Filter>Source\Bomberman_012025\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\IEjercitoBuilder.h">
+      <Filter>Source\Bomberman_012025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Bomberman_012025\Public\IFabricaBloques.h">
       <Filter>Source\Bomberman_012025\Public</Filter>
     </ClInclude>
   </ItemGroup>

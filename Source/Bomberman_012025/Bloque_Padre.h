@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "ETipoBloque.h"
 #include "Bloque_Padre.generated.h"
 
 class UStaticMeshComponent;	
@@ -42,5 +43,12 @@ public:
 
 	virtual void AjustarTamano(FVector NuevoTamano);
 
+	// Getter y Setter para el tipo de bloque
+	void SetTipoBloque(ETipoBloque NuevoTipo);
+	ETipoBloque GetTipoBloque() const;
 
+protected:
+	// Variable para almacenar el tipo
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	ETipoBloque TipoBloque;
 };

@@ -180,7 +180,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueHongo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueHongo, 1703003530);
+	IMPLEMENT_CLASS(ABloqueHongo, 3132473407);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueHongo>()
 	{
 		return ABloqueHongo::StaticClass();

@@ -5,6 +5,7 @@
 #include "GameFramework/Actor.h"
 #include "ILaberintoBuilder.h"
 #include "Laberinto.h"
+#include "FabricaBloques.h"
 #include "LaberintoConcretoBuilder.generated.h"
 
 
@@ -28,6 +29,8 @@ public:
 
 private:
 	ALaberinto* Laberinto;
+	UPROPERTY()
+	AFabricaBloques* FabricaBloques;
 
 public:
 	virtual void ConstruirMatriz(const TArray<TArray<int32>>& Matriz) override;
@@ -35,6 +38,12 @@ public:
 	virtual ALaberinto* ObtenerLaberinto() override;
 
 	virtual const TArray<FVector>& GetPosicionesValidas() const override;
+
+	virtual void SetFabrica(AFabricaBloques* NuevaFabrica);
+
+	// Método para establecer la fábrica
+	void EstablecerFabricaBloques(AFabricaBloques* Fabrica);
+
 private:
 	TArray<TArray<int32>> aMapaBloques;
 	TArray<FVector> PosicionesValidas;

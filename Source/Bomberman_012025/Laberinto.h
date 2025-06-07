@@ -31,4 +31,7 @@ public:
 
 	void AgregarElemento(AActor* Elemento);
 
+	//fabrica 
+	void AgregarBloque(AActor* Bloque);
+
 };
