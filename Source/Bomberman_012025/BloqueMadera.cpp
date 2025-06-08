@@ -18,6 +18,7 @@ ABloqueMadera::ABloqueMadera()
 		MallaBloque_Padre->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 	}
 	//para asignar textura al bloque
+
 	static ConstructorHelpers::FObjectFinder<UMaterialInterface> ObjetoBloqueMaderaMaterial(TEXT("/Script/Engine.Material'/Game/StarterContent/Materials/M_Wood_Oak.M_Wood_Oak'"));
 	if (ObjetoBloqueMaderaMaterial.Succeeded())
 	{

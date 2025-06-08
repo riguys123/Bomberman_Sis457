@@ -49,3 +49,14 @@ void ABloqueHielo::Tick(float DeltaTime)
 
 	SetActorLocation(NuevaPos);
 }
+
+AActor* ABloqueHielo::Clonar(UWorld* Mundo, const FVector& Pos, const FRotator& Rot) const
+{
+	// Spawn de un nuevo BloqueHielo usando la clase actual
+	ABloqueHielo* NuevoBloque = Mundo->SpawnActor<ABloqueHielo>(GetClass(), Pos, Rot);
+	if (NuevoBloque)
+	{
+		// Puedes configurar cosas específicas si quieres
+	}
+	return NuevoBloque;
+}

@@ -31,6 +31,9 @@
 #include "EjercitoAcuaticoBuilder.h"
 #include "DirectorEjercito.h"
 #include "FabricaBloques.h"
+#include "ETipoBloque.h"
+#include "IPrototype.h"
+#include "MuroBase.h"
 
 
 ABomberman_012025GameMode::ABomberman_012025GameMode()
@@ -137,6 +140,20 @@ void ABomberman_012025GameMode::BeginPlay()
 
 	// Construcción del laberinto usando la matriz
 	Director->ConstruirLaberinto(Matriz);
+
+	//-----------------------------------------------------------------------------PROTOTYPE MuroBase
+
+
+	// Crear prototipos y ocultarlos
+	ABloqueHielo* HieloProto = GetWorld()->SpawnActor<ABloqueHielo>();
+	HieloProto->SetActorHiddenInGame(true);
+	HieloProto->SetActorEnableCollision(false);
+	HieloProto->SetActorTickEnabled(false);
+
+	Prototipos.Add("Hielo", HieloProto);
+
+	// Para clonar después:
+	AActor* NuevoBloque = Prototipos["Hielo"]->Clonar(GetWorld(), FVector(100.0f, 200.0f, 190.0f), FRotator::ZeroRotator);
 
 
 	/*ADirectorEjercito* ADirectorA = GetWorld()->SpawnActor<ADirectorEjercito>();

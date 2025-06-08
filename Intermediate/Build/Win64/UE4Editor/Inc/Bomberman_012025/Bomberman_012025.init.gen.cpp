@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xE8EB26DD,
-				0x2E3AF079,
+				0xF20701CA,
+				0x61D9C677,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

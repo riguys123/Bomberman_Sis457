@@ -177,7 +177,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueArena() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueArena, 2066439846);
+	IMPLEMENT_CLASS(ABloqueArena, 3742524783);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueArena>()
 	{
 		return ABloqueArena::StaticClass();

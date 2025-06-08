@@ -160,8 +160,8 @@ public:
 
 	//para el ejercito builder 
 	void CrearEjercitoAcuatico();
-
-
+	//-----------------------------------------------PROTOTYPE
+	TMap<FString, ABloque_Padre*> Prototipos;
 };
 
 

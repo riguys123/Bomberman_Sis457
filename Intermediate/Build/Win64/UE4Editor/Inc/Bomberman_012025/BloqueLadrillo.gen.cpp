@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueLadrillo() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueLadrillo, 3645306986);
+	IMPLEMENT_CLASS(ABloqueLadrillo, 3046549637);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueLadrillo>()
 	{
 		return ABloqueLadrillo::StaticClass();

@@ -5,12 +5,13 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "ETipoBloque.h"
+#include "IPrototype.h"
 #include "Bloque_Padre.generated.h"
 
 class UStaticMeshComponent;	
 class UParticleSystemComponent;
 UCLASS()
-class BOMBERMAN_012025_API ABloque_Padre : public AActor
+class BOMBERMAN_012025_API ABloque_Padre : public AActor, public IIPrototype
 {
 	GENERATED_BODY()
 
@@ -46,6 +47,11 @@ public:
 	// Getter y Setter para el tipo de bloque
 	void SetTipoBloque(ETipoBloque NuevoTipo);
 	ETipoBloque GetTipoBloque() const;
+
+	// Implementación de la función Clone
+	virtual AActor* Clonar(UWorld* Mundo, const FVector& Pos, const FRotator& Rot) const override;
+
+
 
 protected:
 	// Variable para almacenar el tipo

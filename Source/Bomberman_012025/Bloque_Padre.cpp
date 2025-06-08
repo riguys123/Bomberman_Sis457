@@ -71,3 +71,16 @@ ETipoBloque ABloque_Padre::GetTipoBloque() const
 {
 	return TipoBloque;
 }
+
+AActor* ABloque_Padre::Clonar(UWorld* Mundo, const FVector& Pos, const FRotator& Rot) const
+{
+	if (!Mundo) return nullptr;
+
+	ABloque_Padre* NuevoBloque = Mundo->SpawnActor<ABloque_Padre>(GetClass(), Pos, Rot);
+	if (NuevoBloque)
+	{
+		NuevoBloque->TipoBloque = this->TipoBloque;
+		// Aquí puedes copiar más propiedades si es necesario
+	}
+	return NuevoBloque;
+}

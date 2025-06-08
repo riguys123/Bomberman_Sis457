@@ -20,6 +20,7 @@ void EmptyLinkFunctionForGeneratedCodeBloque_Padre() {}
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystemComponent_NoRegister();
 	BOMBERMAN_012025_API UEnum* Z_Construct_UEnum_Bomberman_012025_ETipoBloque();
+	BOMBERMAN_012025_API UClass* Z_Construct_UClass_UIPrototype_NoRegister();
 // End Cross Module References
 	void ABloque_Padre::StaticRegisterNativesABloque_Padre()
 	{
@@ -48,6 +49,7 @@ void EmptyLinkFunctionForGeneratedCodeBloque_Padre() {}
 #endif
 		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_TipoBloque;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -96,6 +98,9 @@ void EmptyLinkFunctionForGeneratedCodeBloque_Padre() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABloque_Padre_Statics::NewProp_TipoBloque_Underlying,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABloque_Padre_Statics::NewProp_TipoBloque,
 	};
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ABloque_Padre_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UIPrototype_NoRegister, (int32)VTABLE_OFFSET(ABloque_Padre, IIPrototype), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABloque_Padre_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABloque_Padre>::IsAbstract,
 	};
@@ -106,11 +111,11 @@ void EmptyLinkFunctionForGeneratedCodeBloque_Padre() {}
 		DependentSingletons,
 		nullptr,
 		Z_Construct_UClass_ABloque_Padre_Statics::PropPointers,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_ABloque_Padre_Statics::PropPointers),
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ABloque_Padre_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ABloque_Padre_Statics::Class_MetaDataParams))
 	};
@@ -123,7 +128,7 @@ void EmptyLinkFunctionForGeneratedCodeBloque_Padre() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloque_Padre, 1987619168);
+	IMPLEMENT_CLASS(ABloque_Padre, 4200915571);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloque_Padre>()
 	{
 		return ABloque_Padre::StaticClass();
