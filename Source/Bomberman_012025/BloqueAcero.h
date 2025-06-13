@@ -4,11 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "Bloque_Padre.h"
-#include "BloqueAcero.generated.h"
+#include "BloqueAcero.generated.h"	
 
-/**
- * 
- */
+
 UCLASS()
 class BOMBERMAN_012025_API ABloqueAcero : public ABloque_Padre
 {
@@ -22,4 +20,6 @@ protected:
 
 public:
 	virtual void Tick(float DeltaTime) override;
+	virtual AActor* Clonar(UWorld* Mundo, const FVector& Pos, const FRotator& Rot) const override;
+	//virtual ETipoBloque GetTipoBloque() const override;
 };

@@ -21,6 +21,7 @@ protected:
 	UStaticMeshComponent* MallaBloque_Padre;// malla del bloque padre
 	UPROPERTY()
 	UParticleSystemComponent* Particulas;// particulas
+	ETipoBloque TipoBloque;
 protected:
 
 	// Called when the game starts or when spawned
@@ -30,8 +31,6 @@ public:
 	ABloque_Padre();
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-
 
 	float FloatSpeed;
 	float RotationSpeed;
@@ -50,11 +49,12 @@ public:
 
 	// Implementación de la función Clone
 	virtual AActor* Clonar(UWorld* Mundo, const FVector& Pos, const FRotator& Rot) const override;
+//	virtual ETipoBloque GetTipoBloque() const { return TipoBloque; }//para que devuelva el tipo de bloque
 
 
 
 protected:
 	// Variable para almacenar el tipo
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	ETipoBloque TipoBloque;
+//	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+//	ETipoBloque TipoBloque;
 };

@@ -23,4 +23,22 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+protected:
+	UPROPERTY(VisibleAnywhere)
+	UStaticMeshComponent* MeshBomba;
+
+	UPROPERTY(EditAnywhere, Category = "Bomba")
+	float TiempoDeBoom = 3.0f;
+
+	FTimerHandle TimerExplosion;
+	FTimerHandle TimerFire;
+
+	void Explotar();
+	UPROPERTY(EditAnywhere, Category="Explosion")
+	int32 RangoExplosion = 2;//bloques que llega la explosión
+
+	UPROPERTY(EditAnywhere, Category = "Explosion")
+	float DistanciaEntreBloques = 100.0f; //distancia bloques 
+
+
 };

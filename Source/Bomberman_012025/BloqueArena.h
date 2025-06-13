@@ -18,6 +18,7 @@ protected:
 
 public:
 	virtual void Tick(float DeltaTime) override;
+	virtual AActor* Clonar(UWorld* Mundo, const FVector& Pos, const FRotator& Rot) const override;
 
 protected:
 	float VelocidadA;

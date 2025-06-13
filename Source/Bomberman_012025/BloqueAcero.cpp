@@ -28,3 +28,18 @@ void ABloqueAcero::BeginPlay()
 void ABloqueAcero::Tick(float DeltaTime)
 {
 }
+AActor* ABloqueAcero::Clonar(UWorld* Mundo, const FVector& Pos, const FRotator& Rot) const
+{
+	// Spawn de un nuevo BloqueHielo usando la clase actual
+	ABloqueAcero* NuevoBloque = Mundo->SpawnActor<ABloqueAcero>(GetClass(), Pos, Rot);
+	if (NuevoBloque)
+	{
+		// Puedes configurar cosas específicas si quieres
+	}
+	return NuevoBloque;
+}
+
+//ETipoBloque ABloqueAcero::GetTipoBloque() const
+//{
+//	return TipoBloque();
+//}

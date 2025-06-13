@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeBloqueAcero() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABloqueAcero_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "BloqueAcero.h" },
 		{ "ModuleRelativePath", "BloqueAcero.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueAcero() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueAcero, 4207756228);
+	IMPLEMENT_CLASS(ABloqueAcero, 3711530501);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueAcero>()
 	{
 		return ABloqueAcero::StaticClass();

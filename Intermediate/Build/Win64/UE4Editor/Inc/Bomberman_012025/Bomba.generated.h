@@ -58,7 +58,13 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABomba)
 
 
-#define Bomberman_012025_Source_Bomberman_012025_Bomba_h_12_PRIVATE_PROPERTY_OFFSET
+#define Bomberman_012025_Source_Bomberman_012025_Bomba_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__MeshBomba() { return STRUCT_OFFSET(ABomba, MeshBomba); } \
+	FORCEINLINE static uint32 __PPO__TiempoDeBoom() { return STRUCT_OFFSET(ABomba, TiempoDeBoom); } \
+	FORCEINLINE static uint32 __PPO__RangoExplosion() { return STRUCT_OFFSET(ABomba, RangoExplosion); } \
+	FORCEINLINE static uint32 __PPO__DistanciaEntreBloques() { return STRUCT_OFFSET(ABomba, DistanciaEntreBloques); }
+
+
 #define Bomberman_012025_Source_Bomberman_012025_Bomba_h_9_PROLOG
 #define Bomberman_012025_Source_Bomberman_012025_Bomba_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

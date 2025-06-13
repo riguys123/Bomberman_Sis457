@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Bomberman_012025.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{5F8F05D8-0D8D-40E4-AC5D-64E6FE333147}</UniqueIdentifier>
+      <UniqueIdentifier>{9B0FDA65-AE90-40BE-BDEE-1345568A1F1F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Bomberman_012025.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\Temp.txt" />
     <Filter Include="Config">
-      <UniqueIdentifier>{05AB80CE-EE14-4381-BEF8-6B4A4C440E35}</UniqueIdentifier>
+      <UniqueIdentifier>{B9FEEC1D-C0B4-4390-A481-0085DB0215B2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -33,7 +33,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Bomberman_012025">
-      <UniqueIdentifier>{9D2F85A2-BFF2-4E4C-975F-9F129435EA3C}</UniqueIdentifier>
+      <UniqueIdentifier>{83B14739-9406-4549-AD84-72A16B7AC4D4}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Bomberman_012025\BloqueAcero.cpp">
       <Filter>Source\Bomberman_012025</Filter>
@@ -219,7 +219,7 @@
       <Filter>Source\Bomberman_012025</Filter>
     </ClInclude>
     <Filter Include="Source\Bomberman_012025\Private">
-      <UniqueIdentifier>{76301C09-D4A5-4CB8-906B-91B7C4A9DDF8}</UniqueIdentifier>
+      <UniqueIdentifier>{C209687C-54B1-4B0F-898E-2E30AB4F4AE3}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\DirectorEjercito.cpp">
       <Filter>Source\Bomberman_012025\Private</Filter>
@@ -245,11 +245,14 @@
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\IPrototype.cpp">
       <Filter>Source\Bomberman_012025\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Bomberman_012025\Private\Moneda.cpp">
+      <Filter>Source\Bomberman_012025\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\MuroBase.cpp">
       <Filter>Source\Bomberman_012025\Private</Filter>
     </ClCompile>
     <Filter Include="Source\Bomberman_012025\Public">
-      <UniqueIdentifier>{04487553-9E5A-45BE-AAA5-9A2C113B62F3}</UniqueIdentifier>
+      <UniqueIdentifier>{DFCFD1F5-464B-491B-88F3-65D29494509C}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\DirectorEjercito.h">
       <Filter>Source\Bomberman_012025\Public</Filter>
@@ -273,6 +276,9 @@
       <Filter>Source\Bomberman_012025\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\IPrototype.h">
+      <Filter>Source\Bomberman_012025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Bomberman_012025\Public\Moneda.h">
       <Filter>Source\Bomberman_012025\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\MuroBase.h">

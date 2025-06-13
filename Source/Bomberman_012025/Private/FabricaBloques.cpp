@@ -50,7 +50,7 @@ ABloque_Padre* AFabricaBloques::CrearBloque(ETipoBloque Tipo, const FVector& Pos
 
     if (NuevoBloque)
     {
-        NuevoBloque->SetTipoBloque(Tipo); // asegúrate de tener esta función en Bloque_Padre
+        NuevoBloque->SetTipoBloque(Tipo); // función en Bloque_Padre
         BloquesCreados.Add(BloqueID, NuevoBloque);
     }
 

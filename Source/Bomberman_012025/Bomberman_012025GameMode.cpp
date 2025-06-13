@@ -56,7 +56,7 @@ void ABomberman_012025GameMode::BeginPlay()
 	// 1. Spawnea la fábrica en el mundo
 	FActorSpawnParameters SpawnParams;
 	SpawnParams.Name = TEXT("FabricaDeBloques");
-
+	
 	AFabricaBloques* Fabrica = GetWorld()->SpawnActor<AFabricaBloques>(
 		AFabricaBloques::StaticClass(),
 		FVector(0.f, 0.f, 0.f),           // Posición donde aparece la fábrica
@@ -74,7 +74,7 @@ void ABomberman_012025GameMode::BeginPlay()
 
 
     //------------------------------------------------------------------------------BUILDER laberinto
-	// Ejemplo de matriz (puedes cargarla desde archivo o generarla)
+	// Matriz del laberinto
 	TArray<TArray<int32>> Matriz = {
 
 { 0,  0,  0,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1 },
@@ -331,155 +331,6 @@ void ABomberman_012025GameMode::BeginPlay()
 
 void ABomberman_012025GameMode::PosicionarEnBloqueMaderaConMasAdyacentes()
 {
-/*
-	int32 MaxAdyacentes = -1;
-	FVector PosicionBloqueSeleccionado;
-
-	// Iterar sobre el mapa de bloques
-	for (int32 i = 0; i < aMapaBloques.Num(); ++i)
-	{
-		for (int32 j = 0; j < aMapaBloques[i].Num(); ++j)
-		{
-			// Verificar si el bloque actual es de madera == 3
-			if (aMapaBloques[i][j] == 3)
-			{
-				int32 Adyacentes = 0;
-
-				// Verificar los 4 lados (arriba, abajo, izquierda, derecha)
-				if (i > 0 && aMapaBloques[i - 1][j] != 0) Adyacentes++; // Arriba
-				if (i < aMapaBloques.Num() - 1 && aMapaBloques[i + 1][j] != 0) Adyacentes++; // Abajo
-				if (j > 0 && aMapaBloques[i][j - 1] != 0) Adyacentes++; // Izquierda
-				if (j < aMapaBloques[i].Num() - 1 && aMapaBloques[i][j + 1] != 0) Adyacentes++; // Derecha
-
-				// Actualizar si encontramos un bloque con más adyacentes
-				if (Adyacentes > MaxAdyacentes)
-				{
-					MaxAdyacentes = Adyacentes;
-					PosicionBloqueSeleccionado = FVector(i * 100.0f, j * 100.0f, 50.0f); // Ajustar escala según el tamaño del bloque
-				}
-			}
-		}
-	}
-
-	// Posicionar en el bloque seleccionado
-	if (MaxAdyacentes > -1)
-	{
-		PosicionSiguienteBloque = PosicionBloqueSeleccionado;
-
-	}
-	*/
-}
-/*
-void ABomberman_012025GameMode::SpawnBloque(FVector posicionBloque, int32 tipoBloque)
-{
-	ABloque_Padre* BloqueGenerado = nullptr;
-	//elejir el tipo de bloque a generar basado en el valor 
-	if (tipoBloque == 10)
-	{
-		BloqueGenerado = GetWorld()->SpawnActor<ABloqueHongo>(ABloqueHongo::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-	}
-	else if (tipoBloque == 9)
-	{
-		BloqueGenerado = GetWorld()->SpawnActor<ABloqueHielo>(ABloqueHielo::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-	}
-	else if (tipoBloque == 8)
-	{
-		BloqueGenerado = GetWorld()->SpawnActor<ABloqueElectrico>(ABloqueElectrico::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-	}
-	else if (tipoBloque == 7)
-	{
-		BloqueGenerado = GetWorld()->SpawnActor<ABloqueArena>(ABloqueArena::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-	}
-	else if (tipoBloque == 6)
-	{
-		BloqueGenerado = GetWorld()->SpawnActor<ABloqueLava>(ABloqueLava::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-	}
-	else if (tipoBloque == 5)
-	{
-		BloqueGenerado = GetWorld()->SpawnActor<ABloqueBurbuja>(ABloqueBurbuja::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-	}
-	else if (tipoBloque == 4)
-	{
-		BloqueGenerado = GetWorld()->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-	}
-	else if (tipoBloque == 3)
-	{
-		BloqueGenerado = GetWorld()->SpawnActor<ABloqueConcreto>(ABloqueConcreto::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-	}
-	else if (tipoBloque == 2)
-	{
-		BloqueGenerado = GetWorld()->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-	}
-	else if (tipoBloque == 1)
-	{
-		BloqueGenerado = GetWorld()->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-	}
-	else {
-		return;
-	}
-	//agregar el bloque al Tarray si fue generado
-	if (BloqueGenerado)
-	{
-		aBloques.Add(BloqueGenerado);
-	}
-
-}*/
-
-void ABomberman_012025GameMode::DestruirBloque()
-{
-	//seleccionar aleatoriamente un bloque del array y aBloques para su eliminacion 
-	//int numeroBloques = aBloques.Num();
-	//int NumeroAleatorio = FMath::RandRange(1, numeroBloques);
-
-	//if (aBloques.Num() > 0)
-	//{
-	//	BloqueActual = aBloques[NumeroAleatorio];//obten el primer bloque
-	//	if (BloqueActual)
-	//	{
-	//		BloqueActual->Destroy();
-	//		//realiza operaciones con el bloque 
-	//		//PrimerBloque->SetActorLocation(FVector(100.0f, 100.0f, 100.0f));
-	//	}
-	//}
-}
- //aqui modifique para que aparezca el personaje en los bloques madera smplemente cambiando las posiciones validas de 0 a 3 que es el bloque de madera 
-void ABomberman_012025GameMode::SpawnPersonaje()
-{
-	/*
-	PosicionesValidasPersonaje.Empty();
-	for (int i = 1; i <= 50; i++) {
-		for (int j = 1; j <= 50; j++) {
-			if (aMapaBloques[i - 1][j - 1] == 3) { //<--aqui
-				FVector Pos = FVector(110.0f + i * 100.0f, -1250.0f + j * 100.0f, 390.0f);
-				PosicionesValidasPersonaje.Add(Pos);
-			};
-		};
-	};
-	// Elegir una posición aleatoria
-	if (PosicionesValidasPersonaje.Num() > 0)
-	{
-		int32 Index = FMath::RandRange(0, PosicionesValidasPersonaje.Num() - 1);
-		FVector SpawnLocation = PosicionesValidasPersonaje[Index];
-		APlayerController* PC = GetWorld()->GetFirstPlayerController();
-		if (PC)
-		{
-			APawn* Personaje = PC->GetPawn();
-			if (Personaje)
-			{
-				Personaje->SetActorLocation(SpawnLocation);
-			}
-			else
-			{
-				ABomberman_012025Character* NuevoPersonaje = GetWorld()->SpawnActor<ABomberman_012025Character>(ABomberman_012025Character::StaticClass(), SpawnLocation, FRotator::ZeroRotator);
-				if (NuevoPersonaje)
-				{
-					PC->Possess(NuevoPersonaje);
-				};
-		};
-		};
-
-	};
-	*/
 }
 
 void ABomberman_012025GameMode::SpawnEnemigo()
@@ -505,49 +356,8 @@ void ABomberman_012025GameMode::SpawnEnemigo()
 	GetWorld()->SpawnActor<AEnemigoAcuaticoAnguila>(AEnemigoAcuaticoAnguila::StaticClass(), ObtenerPosicionAleatoria(), FRotator::ZeroRotator);
 	//GetWorld()->SpawnActor<AEnemigoSubterraneoTarantula>(AEnemigoSubterraneoTarantula::StaticClass(), ObtenerPosicionAleatoria(), FRotator::ZeroRotator);
    }
-	
-/*
-void ABomberman_012025GameMode::InicializarPosicionesEnemigos()
-{
-	PosicionesValidasEnemigos.Empty();
-	for (int i = 0; i < aMapaBloques.Num(); i++)
-	{
-		for (int j = 0; j < aMapaBloques[i].Num(); j++)
-		{
-			if (aMapaBloques[i][j] == 0) // Espacios vacíos en el mapa
-			{
-				FVector Posicion = FVector(110.0f + (i + 1) * 200.0f, -1250.0f + (j + 1) * 200.0f, 190.0f);
-				PosicionesValidasEnemigos.Add(Posicion);
-			}
-		}
-	}
-}
-*/
-
 void ABomberman_012025GameMode::EliminarBloque()
 {
-	/*
-	TArray<ABloque_Padre*> BloquesMadera;
-
-	for (ABloque_Padre* Bloque : aBloques)
-	{
-		if (Bloque && Bloque->IsA(ABloqueMadera::StaticClass()))
-		{
-			BloquesMadera.Add(Bloque);
-		}
-	}
-
-	if (BloquesMadera.Num() > 0)
-	{
-		int32 Aleatorio = FMath::RandRange(0, BloquesMadera.Num() - 1);
-		BloqueActual = BloquesMadera[Aleatorio];
-
-		if (BloqueActual)
-		{
-			BloqueActual->Destroy();
-			aBloques.Remove(BloqueActual);
-		}
-	}*/
 }
 
 

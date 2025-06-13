@@ -62,8 +62,7 @@ public: \
 
 #define Bomberman_012025_Source_Bomberman_012025_Bloque_Padre_h_16_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__MallaBloque_Padre() { return STRUCT_OFFSET(ABloque_Padre, MallaBloque_Padre); } \
-	FORCEINLINE static uint32 __PPO__Particulas() { return STRUCT_OFFSET(ABloque_Padre, Particulas); } \
-	FORCEINLINE static uint32 __PPO__TipoBloque() { return STRUCT_OFFSET(ABloque_Padre, TipoBloque); }
+	FORCEINLINE static uint32 __PPO__Particulas() { return STRUCT_OFFSET(ABloque_Padre, Particulas); }
 
 
 #define Bomberman_012025_Source_Bomberman_012025_Bloque_Padre_h_13_PROLOG

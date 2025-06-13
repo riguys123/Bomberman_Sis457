@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueMadera() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueMadera, 2482484708);
+	IMPLEMENT_CLASS(ABloqueMadera, 4129326833);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueMadera>()
 	{
 		return ABloqueMadera::StaticClass();

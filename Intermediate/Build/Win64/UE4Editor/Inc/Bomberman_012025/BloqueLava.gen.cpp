@@ -88,7 +88,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueLava() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueLava, 4117326379);
+	IMPLEMENT_CLASS(ABloqueLava, 3625413768);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueLava>()
 	{
 		return ABloqueLava::StaticClass();

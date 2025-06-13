@@ -265,11 +265,8 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
-/FI"C:\Bomberman_012025\Intermediate\Build\Win64\Bomberman_012025Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
-/Yu"C:\Bomberman_012025\Intermediate\Build\Win64\Bomberman_012025Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
-/Fp"C:\Bomberman_012025\Intermediate\Build\Win64\Bomberman_012025Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.pch"
 "C:\Bomberman_012025\Source\Bomberman_012025\Private\IPrototype.cpp"
-/FI"C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\DebugGame\Bomberman_012025\Definitions.Bomberman_012025.h"
+/FI"C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\DebugGame\Bomberman_012025\Definitions.h"
 /Fo"C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\DebugGame\Bomberman_012025\IPrototype.cpp.obj"
 /TP
 /GR-

@@ -48,3 +48,13 @@ void ABloqueHongo::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* O
 		GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Green, TEXT("Chocaste con el bloque hongo y saltaste hacia arriba"));
 	}
 }
+AActor* ABloqueHongo::Clonar(UWorld* Mundo, const FVector& Pos, const FRotator& Rot) const
+{
+	// Spawn de un nuevo BloqueHielo usando la clase actual
+	ABloqueHongo* NuevoBloque = Mundo->SpawnActor<ABloqueHongo>(GetClass(), Pos, Rot);
+	if (NuevoBloque)
+	{
+		// Puedes configurar cosas específicas si quieres
+	}
+	return NuevoBloque;
+}

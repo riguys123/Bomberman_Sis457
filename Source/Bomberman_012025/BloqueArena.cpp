@@ -79,5 +79,14 @@ void ABloqueArena::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* O
 
 	}
 }
-
+AActor* ABloqueArena::Clonar(UWorld* Mundo, const FVector& Pos, const FRotator& Rot) const
+{
+	// Spawn de un nuevo BloqueHielo usando la clase actual
+	ABloqueArena* NuevoBloque = Mundo->SpawnActor<ABloqueArena>(GetClass(), Pos, Rot);
+	if (NuevoBloque)
+	{
+		// Puedes configurar cosas específicas si quieres
+	}
+	return NuevoBloque;
+}
 

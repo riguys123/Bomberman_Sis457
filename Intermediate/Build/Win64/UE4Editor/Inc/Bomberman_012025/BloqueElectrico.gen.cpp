@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBloqueElectrico() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABloqueElectrico, 3484182917);
+	IMPLEMENT_CLASS(ABloqueElectrico, 2948429057);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABloqueElectrico>()
 	{
 		return ABloqueElectrico::StaticClass();

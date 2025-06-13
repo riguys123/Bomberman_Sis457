@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeBomba() {}
 	BOMBERMAN_012025_API UClass* Z_Construct_UClass_ABomba();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Bomberman_012025();
+	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
 	void ABomba::StaticRegisterNativesABomba()
 	{
@@ -31,6 +32,23 @@ void EmptyLinkFunctionForGeneratedCodeBomba() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MeshBomba_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MeshBomba;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TiempoDeBoom_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_TiempoDeBoom;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RangoExplosion_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_RangoExplosion;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DistanciaEntreBloques_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_DistanciaEntreBloques;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -44,6 +62,43 @@ void EmptyLinkFunctionForGeneratedCodeBomba() {}
 		{ "ModuleRelativePath", "Bomba.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomba_Statics::NewProp_MeshBomba_MetaData[] = {
+		{ "Category", "Bomba" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Bomba.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABomba_Statics::NewProp_MeshBomba = { "MeshBomba", nullptr, (EPropertyFlags)0x00200800000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomba, MeshBomba), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABomba_Statics::NewProp_MeshBomba_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomba_Statics::NewProp_MeshBomba_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomba_Statics::NewProp_TiempoDeBoom_MetaData[] = {
+		{ "Category", "Bomba" },
+		{ "ModuleRelativePath", "Bomba.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABomba_Statics::NewProp_TiempoDeBoom = { "TiempoDeBoom", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomba, TiempoDeBoom), METADATA_PARAMS(Z_Construct_UClass_ABomba_Statics::NewProp_TiempoDeBoom_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomba_Statics::NewProp_TiempoDeBoom_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomba_Statics::NewProp_RangoExplosion_MetaData[] = {
+		{ "Category", "Explosion" },
+		{ "ModuleRelativePath", "Bomba.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABomba_Statics::NewProp_RangoExplosion = { "RangoExplosion", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomba, RangoExplosion), METADATA_PARAMS(Z_Construct_UClass_ABomba_Statics::NewProp_RangoExplosion_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomba_Statics::NewProp_RangoExplosion_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomba_Statics::NewProp_DistanciaEntreBloques_MetaData[] = {
+		{ "Category", "Explosion" },
+		{ "Comment", "//bloques que llega la explosi?n\n" },
+		{ "ModuleRelativePath", "Bomba.h" },
+		{ "ToolTip", "bloques que llega la explosi?n" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABomba_Statics::NewProp_DistanciaEntreBloques = { "DistanciaEntreBloques", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomba, DistanciaEntreBloques), METADATA_PARAMS(Z_Construct_UClass_ABomba_Statics::NewProp_DistanciaEntreBloques_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomba_Statics::NewProp_DistanciaEntreBloques_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABomba_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomba_Statics::NewProp_MeshBomba,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomba_Statics::NewProp_TiempoDeBoom,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomba_Statics::NewProp_RangoExplosion,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomba_Statics::NewProp_DistanciaEntreBloques,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABomba_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABomba>::IsAbstract,
 	};
@@ -53,11 +108,11 @@ void EmptyLinkFunctionForGeneratedCodeBomba() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ABomba_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ABomba_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ABomba_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ABomba_Statics::Class_MetaDataParams))
@@ -71,7 +126,7 @@ void EmptyLinkFunctionForGeneratedCodeBomba() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomba, 1869318563);
+	IMPLEMENT_CLASS(ABomba, 3778812039);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABomba>()
 	{
 		return ABomba::StaticClass();

@@ -46,7 +46,6 @@ void EmptyLinkFunctionForGeneratedCodeEnemigoAcuaticoAnguila() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigoAcuaticoAnguila_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "EnemigoAcuaticoAnguila.h" },
 		{ "ModuleRelativePath", "EnemigoAcuaticoAnguila.h" },
@@ -55,13 +54,11 @@ void EmptyLinkFunctionForGeneratedCodeEnemigoAcuaticoAnguila() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemigoAcuaticoAnguila_Statics::NewProp_CollisionComponent_MetaData[] = {
 		{ "Category", "EnemigoAcuaticoAnguila" },
-		{ "Comment", "// M?todo virtual para manejar la colisi?n con el jugador\n//virtual void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor,\n//\x09""class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,\n//\x09""bool bFromSweep, const FHitResult& SweepResult);\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "EnemigoAcuaticoAnguila.h" },
-		{ "ToolTip", "M?todo virtual para manejar la colisi?n con el jugador\nvirtual void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor,\n      class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,\n      bool bFromSweep, const FHitResult& SweepResult);" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemigoAcuaticoAnguila_Statics::NewProp_CollisionComponent = { "CollisionComponent", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigoAcuaticoAnguila, CollisionComponent), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemigoAcuaticoAnguila_Statics::NewProp_CollisionComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigoAcuaticoAnguila_Statics::NewProp_CollisionComponent_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemigoAcuaticoAnguila_Statics::NewProp_CollisionComponent = { "CollisionComponent", nullptr, (EPropertyFlags)0x00200800000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEnemigoAcuaticoAnguila, CollisionComponent), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemigoAcuaticoAnguila_Statics::NewProp_CollisionComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigoAcuaticoAnguila_Statics::NewProp_CollisionComponent_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemigoAcuaticoAnguila_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemigoAcuaticoAnguila_Statics::NewProp_CollisionComponent,
 	};
@@ -92,7 +89,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemigoAcuaticoAnguila() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemigoAcuaticoAnguila, 1018725748);
+	IMPLEMENT_CLASS(AEnemigoAcuaticoAnguila, 60948441);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<AEnemigoAcuaticoAnguila>()
 	{
 		return AEnemigoAcuaticoAnguila::StaticClass();

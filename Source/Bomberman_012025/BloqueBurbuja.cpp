@@ -81,3 +81,13 @@ void ABloqueBurbuja::Tick(float DeltaTime)
     //    }
     //}
 }
+AActor* ABloqueBurbuja::Clonar(UWorld* Mundo, const FVector& Pos, const FRotator& Rot) const
+{
+    // Spawn de un nuevo BloqueHielo usando la clase actual
+    ABloqueBurbuja* NuevoBloque = Mundo->SpawnActor<ABloqueBurbuja>(GetClass(), Pos, Rot);
+    if (NuevoBloque)
+    {
+        // Puedes configurar cosas específicas si quieres
+    }
+    return NuevoBloque;
+}

@@ -57,3 +57,13 @@ void ABloqueLava::Tick(float DeltaTime)
 
 	SetActorLocation(NuevaPosicion);
 }
+AActor* ABloqueLava::Clonar(UWorld* Mundo, const FVector& Pos, const FRotator& Rot) const
+{
+	// Spawn de un nuevo BloqueHielo usando la clase actual
+	ABloqueLava* NuevoBloque = Mundo->SpawnActor<ABloqueLava>(GetClass(), Pos, Rot);
+	if (NuevoBloque)
+	{
+		// Puedes configurar cosas específicas si quieres
+	}
+	return NuevoBloque;
+}
