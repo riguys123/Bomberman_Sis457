@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xB4F1207F,
+				0xB468797D,
 				0xA2646CCD,
 				METADATA_PARAMS(nullptr, 0)
 			};

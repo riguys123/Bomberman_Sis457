@@ -19,7 +19,6 @@
 #include "C:/Bomberman_012025/Source/Bomberman_012025/Private/EjercitoA.cpp"
 #include "C:/Bomberman_012025/Source/Bomberman_012025/Private/EjercitoAcuaticoBuilder.cpp"
 #include "C:/Bomberman_012025/Source/Bomberman_012025/Private/ETipoBloque.cpp"
-#include "C:/Bomberman_012025/Source/Bomberman_012025/Private/FabricaBloques.cpp"
 #include "C:/Bomberman_012025/Source/Bomberman_012025/Private/IEjercitoBuilder.cpp"
 #include "C:/Bomberman_012025/Source/Bomberman_012025/Private/IFabricaBloques.cpp"
 #include "C:/Bomberman_012025/Source/Bomberman_012025/Private/IPrototype.cpp"

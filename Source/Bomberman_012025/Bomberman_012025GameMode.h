@@ -128,7 +128,7 @@ public:
 	
 	void IniciarEliminarBloque();
 
-
+	void GenerarMonedas();
 	//para Eliminar bloques
 
 	FTimerHandle TimerEliminarBloque;

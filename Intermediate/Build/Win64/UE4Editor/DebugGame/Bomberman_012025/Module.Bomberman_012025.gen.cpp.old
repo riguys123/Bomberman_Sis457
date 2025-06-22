@@ -21,5 +21,6 @@
 #include "C:/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/IPrototype.gen.cpp"
 #include "C:/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/Laberinto.gen.cpp"
 #include "C:/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/LaberintoConcretoBuilder.gen.cpp"
+#include "C:/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/Moneda.gen.cpp"
 #include "C:/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/MuroBase.gen.cpp"
 #include "C:/Bomberman_012025/Intermediate/Build/Win64/UE4Editor/Inc/Bomberman_012025/Puerta.gen.cpp"

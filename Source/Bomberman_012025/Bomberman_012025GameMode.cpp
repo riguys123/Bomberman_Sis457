@@ -34,6 +34,7 @@
 #include "ETipoBloque.h"
 #include "IPrototype.h"
 #include "MuroBase.h"
+#include "Moneda.h"	
 
 
 ABomberman_012025GameMode::ABomberman_012025GameMode()
@@ -156,6 +157,10 @@ void ABomberman_012025GameMode::BeginPlay()
 	AActor* NuevoBloque = Prototipos["Hielo"]->Clonar(GetWorld(), FVector(100.0f, 200.0f, 190.0f), FRotator::ZeroRotator);
 
 
+
+	// Crear monedas individuales
+	AMoneda* Moneda1 = GetWorld()->SpawnActor<AMoneda>(AMoneda::StaticClass(), FVector(100.0f, 880.0f, 200.0f), FRotator::ZeroRotator);
+	AMoneda* Moneda2 = GetWorld()->SpawnActor<AMoneda>(AMoneda::StaticClass(), FVector(1000.0f, 880.0f, 200.0f), FRotator::ZeroRotator);
 	/*ADirectorEjercito* ADirectorA = GetWorld()->SpawnActor<ADirectorEjercito>();
 	FVector Posicion = FVector(500.f, 500.f, 100.f);
 
@@ -371,6 +376,10 @@ void ABomberman_012025GameMode::IniciarEliminarBloque()
 
 
 
+void ABomberman_012025GameMode::DestruirBloque()
+{
+}
+
 void ABomberman_012025GameMode::SpawnLaberinto()
 {
 	/*
@@ -428,6 +437,10 @@ void ABomberman_012025GameMode::SpawnLaberinto()
 	};
 	*/
 
+}
+
+void ABomberman_012025GameMode::SpawnPersonaje()
+{
 }
 
 
