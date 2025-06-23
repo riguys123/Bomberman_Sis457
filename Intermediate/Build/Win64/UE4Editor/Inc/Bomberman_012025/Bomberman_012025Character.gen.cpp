@@ -23,6 +23,8 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025Character() {}
 	BOMBERMAN_012025_API UClass* Z_Construct_UClass_ABomba_NoRegister();
 	BOMBERMAN_012025_API UClass* Z_Construct_UClass_AInvokerBombManager_NoRegister();
 	BOMBERMAN_012025_API UClass* Z_Construct_UClass_AComandoColocarBomba_NoRegister();
+	BOMBERMAN_012025_API UClass* Z_Construct_UClass_ACuidadorJugador_NoRegister();
+	BOMBERMAN_012025_API UClass* Z_Construct_UClass_UIOriginador_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ABomberman_012025Character::execInputColocarBomba)
 	{
@@ -31,11 +33,28 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025Character() {}
 		P_THIS->InputColocarBomba();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(ABomberman_012025Character::execSetVida)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_NuevaVida);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetVida(Z_Param_NuevaVida);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ABomberman_012025Character::execRestaurarEstadoJugador)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->RestaurarEstadoJugador();
+		P_NATIVE_END;
+	}
 	void ABomberman_012025Character::StaticRegisterNativesABomberman_012025Character()
 	{
 		UClass* Class = ABomberman_012025Character::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "InputColocarBomba", &ABomberman_012025Character::execInputColocarBomba },
+			{ "RestaurarEstadoJugador", &ABomberman_012025Character::execRestaurarEstadoJugador },
+			{ "SetVida", &ABomberman_012025Character::execSetVida },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -58,6 +77,60 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025Character() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABomberman_012025Character_InputColocarBomba_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABomberman_012025Character_RestaurarEstadoJugador_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABomberman_012025Character_RestaurarEstadoJugador_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Bomberman_012025Character.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABomberman_012025Character_RestaurarEstadoJugador_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABomberman_012025Character, nullptr, "RestaurarEstadoJugador", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABomberman_012025Character_RestaurarEstadoJugador_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABomberman_012025Character_RestaurarEstadoJugador_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABomberman_012025Character_RestaurarEstadoJugador()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABomberman_012025Character_RestaurarEstadoJugador_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABomberman_012025Character_SetVida_Statics
+	{
+		struct Bomberman_012025Character_eventSetVida_Parms
+		{
+			int32 NuevaVida;
+		};
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_NuevaVida;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_ABomberman_012025Character_SetVida_Statics::NewProp_NuevaVida = { "NuevaVida", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Bomberman_012025Character_eventSetVida_Parms, NuevaVida), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABomberman_012025Character_SetVida_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABomberman_012025Character_SetVida_Statics::NewProp_NuevaVida,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABomberman_012025Character_SetVida_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Bomberman_012025Character.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABomberman_012025Character_SetVida_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABomberman_012025Character, nullptr, "SetVida", nullptr, nullptr, sizeof(Bomberman_012025Character_eventSetVida_Parms), Z_Construct_UFunction_ABomberman_012025Character_SetVida_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABomberman_012025Character_SetVida_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABomberman_012025Character_SetVida_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABomberman_012025Character_SetVida_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABomberman_012025Character_SetVida()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABomberman_012025Character_SetVida_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -100,7 +173,16 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025Character() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ComandoColocarBombaInstance_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ComandoColocarBombaInstance;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Vida_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_Vida;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CuidadorJugador_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CuidadorJugador;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -110,6 +192,8 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025Character() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABomberman_012025Character_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABomberman_012025Character_InputColocarBomba, "InputColocarBomba" }, // 165692229
+		{ &Z_Construct_UFunction_ABomberman_012025Character_RestaurarEstadoJugador, "RestaurarEstadoJugador" }, // 12468243
+		{ &Z_Construct_UFunction_ABomberman_012025Character_SetVida, "SetVida" }, // 1054530005
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberman_012025Character_Statics::Class_MetaDataParams[] = {
@@ -161,9 +245,9 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025Character() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_ClaseBomba_MetaData[] = {
 		{ "Category", "Bomba" },
-		{ "Comment", "// Clase de bomba que se va a colocar (se asigna en el editor o por c?digo)\n" },
+		{ "Comment", "//--------------------------------------------------------------------------------COMAND\n// Clase de bomba que se va a colocar (se asigna en el editor o por c?digo)\n" },
 		{ "ModuleRelativePath", "Bomberman_012025Character.h" },
-		{ "ToolTip", "Clase de bomba que se va a colocar (se asigna en el editor o por c?digo)" },
+		{ "ToolTip", "--------------------------------------------------------------------------------COMAND\n Clase de bomba que se va a colocar (se asigna en el editor o por c?digo)" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_ClaseBomba = { "ClaseBomba", nullptr, (EPropertyFlags)0x0014000000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomberman_012025Character, ClaseBomba), Z_Construct_UClass_ABomba_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_ClaseBomba_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_ClaseBomba_MetaData)) };
@@ -183,6 +267,21 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025Character() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_ComandoColocarBombaInstance = { "ComandoColocarBombaInstance", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomberman_012025Character, ComandoColocarBombaInstance), Z_Construct_UClass_AComandoColocarBomba_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_ComandoColocarBombaInstance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_ComandoColocarBombaInstance_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_Vida_MetaData[] = {
+		{ "Category", "Estado" },
+		{ "Comment", "//--------------------------------------------------------------MEMENTO\n// Variables para guardar/restaurar\n" },
+		{ "ModuleRelativePath", "Bomberman_012025Character.h" },
+		{ "ToolTip", "--------------------------------------------------------------MEMENTO\n Variables para guardar/restaurar" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_Vida = { "Vida", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomberman_012025Character, Vida), METADATA_PARAMS(Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_Vida_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_Vida_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_CuidadorJugador_MetaData[] = {
+		{ "ModuleRelativePath", "Bomberman_012025Character.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_CuidadorJugador = { "CuidadorJugador", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomberman_012025Character, CuidadorJugador), Z_Construct_UClass_ACuidadorJugador_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_CuidadorJugador_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_CuidadorJugador_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABomberman_012025Character_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_CameraBoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_FollowCamera,
@@ -191,7 +290,12 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025Character() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_ClaseBomba,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_InvokerBombManager,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_ComandoColocarBombaInstance,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_Vida,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomberman_012025Character_Statics::NewProp_CuidadorJugador,
 	};
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ABomberman_012025Character_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UIOriginador_NoRegister, (int32)VTABLE_OFFSET(ABomberman_012025Character, IIOriginador), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABomberman_012025Character_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABomberman_012025Character>::IsAbstract,
 	};
@@ -202,11 +306,11 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025Character() {}
 		DependentSingletons,
 		FuncInfo,
 		Z_Construct_UClass_ABomberman_012025Character_Statics::PropPointers,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ABomberman_012025Character_Statics::PropPointers),
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x008000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ABomberman_012025Character_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ABomberman_012025Character_Statics::Class_MetaDataParams))
 	};
@@ -219,7 +323,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025Character() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomberman_012025Character, 4154689519);
+	IMPLEMENT_CLASS(ABomberman_012025Character, 2591820367);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABomberman_012025Character>()
 	{
 		return ABomberman_012025Character::StaticClass();

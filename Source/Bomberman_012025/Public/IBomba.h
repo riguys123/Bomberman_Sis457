@@ -13,9 +13,7 @@ class UIBomba : public UInterface
 	GENERATED_BODY()
 };
 
-/**
- * 
- */
+
 class BOMBERMAN_012025_API IIBomba
 {
 	GENERATED_BODY()

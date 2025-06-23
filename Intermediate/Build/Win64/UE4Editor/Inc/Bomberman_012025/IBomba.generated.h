@@ -85,7 +85,7 @@ public: \
 
 
 #define Bomberman_012025_Source_Bomberman_012025_Public_IBomba_h_10_PROLOG
-#define Bomberman_012025_Source_Bomberman_012025_Public_IBomba_h_21_GENERATED_BODY_LEGACY \
+#define Bomberman_012025_Source_Bomberman_012025_Public_IBomba_h_19_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Bomberman_012025_Source_Bomberman_012025_Public_IBomba_h_13_SPARSE_DATA \
@@ -95,7 +95,7 @@ public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Bomberman_012025_Source_Bomberman_012025_Public_IBomba_h_21_GENERATED_BODY \
+#define Bomberman_012025_Source_Bomberman_012025_Public_IBomba_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Bomberman_012025_Source_Bomberman_012025_Public_IBomba_h_13_SPARSE_DATA \

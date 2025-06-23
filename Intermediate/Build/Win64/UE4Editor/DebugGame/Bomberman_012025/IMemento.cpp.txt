@@ -1,0 +1,3 @@
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\DebugGame\Bomberman_012025\Definitions.Bomberman_012025.h
+C:\Bomberman_012025\Source\Bomberman_012025\Public\IMemento.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\IMemento.generated.h

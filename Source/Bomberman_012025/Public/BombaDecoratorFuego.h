@@ -6,9 +6,6 @@
 #include "BombaDecorator.h"
 #include "BombaDecoratorFuego.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class BOMBERMAN_012025_API ABombaDecoratorFuego : public ABombaDecorator
 {

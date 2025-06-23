@@ -11,8 +11,14 @@
 #include "Bomba.h"
 #include "InvokerBombManager.h"
 #include "ComandoColocarBomba.h"
+#include "MementoJugador.h"
+#include "IMemento.h"
+#include "IOriginador.h"
+#include "CuidadorJugador.h"
+#include "Engine/Engine.h"
 #include "Kismet/GameplayStatics.h"
 #include "Bomberman_012025GameMode.h"
+
 
 //////////////////////////////////////////////////////////////////////////
 // ABomberman_012025Character
@@ -50,6 +56,9 @@ ABomberman_012025Character::ABomberman_012025Character()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+
+	Vida = 100;// MEMENTO vida jugador 
+
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -80,6 +89,7 @@ void ABomberman_012025Character::SetupPlayerInputComponent(class UInputComponent
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &ABomberman_012025Character::OnResetVR);
 	PlayerInputComponent->BindAction("ColocarBomba", IE_Pressed, this, &ABomberman_012025Character::InputColocarBomba);
+	PlayerInputComponent->BindAction("Restaurar", IE_Pressed, this, &ABomberman_012025Character::RestaurarEstadoJugador);
 
 }
 
@@ -106,7 +116,15 @@ void ABomberman_012025Character::BeginPlay()
 			UE_LOG(LogTemp, Warning, TEXT("ComandoColocarBomba creado e inicializado."));
 		}
 	}
-
+	// Crear el Cuidador si no existe
+	if (!CuidadorJugador)
+	{
+		UWorld* World = GetWorld();
+		if (World)
+		{
+			CuidadorJugador = World->SpawnActor<ACuidadorJugador>(ACuidadorJugador::StaticClass());
+		}
+	}
 }
 
 void ABomberman_012025Character::InputColocarBomba()
@@ -141,6 +159,71 @@ ABomba* ABomberman_012025Character::ColocarBomba()
 	}
 
 	return NuevaBomba;
+}
+
+void ABomberman_012025Character::GuardarEstado(IIMemento* Memento)
+{
+	AMementoJugador* MementoJugador = Cast<AMementoJugador>(Memento);
+	if (MementoJugador)
+	{
+		// Guardar vida y posición en el memento desde el jugador
+		MementoJugador->VidaGuardada = Vida;
+		MementoJugador->PosicionGuardada = GetActorLocation();
+	}
+}
+
+void ABomberman_012025Character::RestaurarDesdeMemento(AMementoJugador* Memento)
+{
+	if (Memento)
+	{
+		Vida = Memento->VidaGuardada;
+		SetActorLocation(Memento->PosicionGuardada);
+
+		// Mostrar info para verificar
+		MostrarEstado();
+	}
+}
+
+void ABomberman_012025Character::MostrarEstado()
+{
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green,
+			FString::Printf(TEXT("Vida: %d, Posición: %s"), Vida, *GetActorLocation().ToString()));
+	}
+}
+
+void ABomberman_012025Character::Morir()
+{
+	ACuidadorJugador* Cuidador = Cast<ACuidadorJugador>(UGameplayStatics::GetActorOfClass(GetWorld(), ACuidadorJugador::StaticClass()));
+	if (Cuidador)
+	{
+		Destroy(); // Destruye al jugador actual
+		Cuidador->Restaurar(nullptr); // Dispara el respawn
+	}
+}
+
+void ABomberman_012025Character::RestaurarEstadoJugador()
+{
+	if (CuidadorJugador)
+	{
+		CuidadorJugador->Restaurar(this);
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Green, TEXT("Estado restaurado correctamente"));
+		}
+	}
+	else
+	{
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Red, TEXT("No se encontró el cuidador para restaurar"));
+		}
+	}
+}
+void ABomberman_012025Character::SetVida(int NuevaVida)
+{
+	Vida = NuevaVida;
 }
 
 void ABomberman_012025Character::OnResetVR()

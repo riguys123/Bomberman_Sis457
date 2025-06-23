@@ -6,11 +6,14 @@
 #include "Bomba.h"
 #include "InvokerBombManager.h"
 #include "ComandoColocarBomba.h"
+#include "IOriginador.h"
+#include "IMemento.h"
+#include "CuidadorJugador.h"
 #include "GameFramework/Character.h"
 #include "Bomberman_012025Character.generated.h"
 
 UCLASS(config=Game)
-class ABomberman_012025Character : public ACharacter
+class ABomberman_012025Character : public ACharacter, public IIOriginador
 {
 	GENERATED_BODY()
 
@@ -31,9 +34,11 @@ public:
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
+	//--------------------------------------------------------------------------------COMAND
 	// Clase de bomba que se va a colocar (se asigna en el editor o por código)
 	UPROPERTY(EditDefaultsOnly, Category = "Bomba")
 	TSubclassOf<ABomba> ClaseBomba;
+
 	// Método que crea y retorna una bomba en el mundo
 	ABomba* ColocarBomba();
 
@@ -44,7 +49,29 @@ public:
 	// Comando concreto para colocar bomba
 	UPROPERTY()
 	AComandoColocarBomba* ComandoColocarBombaInstance;
+	//--------------------------------------------------------------MEMENTO
+	// Variables para guardar/restaurar
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Estado")
+	int Vida = 3;
 
+	// Implementación del método para guardar estado
+	virtual void GuardarEstado(IIMemento* Memento) override;
+
+	// Método que usará el memento para restaurar datos
+	void RestaurarDesdeMemento(class AMementoJugador* Memento);
+
+	// Ejemplo función para mostrar estado actual en pantalla
+	void MostrarEstado();
+
+	void Morir();
+private:
+	UPROPERTY()
+	ACuidadorJugador* CuidadorJugador;
+public:
+	UFUNCTION()
+	void RestaurarEstadoJugador();
+	UFUNCTION()
+	void SetVida(int NuevaVida);
 protected:
 
 	/** Resets HMD orientation in VR. */

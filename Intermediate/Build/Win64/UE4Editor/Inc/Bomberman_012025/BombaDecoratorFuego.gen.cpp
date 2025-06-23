@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeBombaDecoratorFuego() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABombaDecoratorFuego_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "BombaDecoratorFuego.h" },
 		{ "ModuleRelativePath", "Public/BombaDecoratorFuego.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBombaDecoratorFuego() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABombaDecoratorFuego, 592231812);
+	IMPLEMENT_CLASS(ABombaDecoratorFuego, 685517097);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABombaDecoratorFuego>()
 	{
 		return ABombaDecoratorFuego::StaticClass();
