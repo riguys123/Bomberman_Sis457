@@ -18,6 +18,7 @@ void EmptyLinkFunctionForGeneratedCodeBomba() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Bomberman_012025();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	BOMBERMAN_012025_API UClass* Z_Construct_UClass_UIBomba_NoRegister();
 // End Cross Module References
 	void ABomba::StaticRegisterNativesABomba()
 	{
@@ -49,6 +50,7 @@ void EmptyLinkFunctionForGeneratedCodeBomba() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_DistanciaEntreBloques;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UE4CodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -99,6 +101,9 @@ void EmptyLinkFunctionForGeneratedCodeBomba() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomba_Statics::NewProp_RangoExplosion,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomba_Statics::NewProp_DistanciaEntreBloques,
 	};
+		const UE4CodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ABomba_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UIBomba_NoRegister, (int32)VTABLE_OFFSET(ABomba, IIBomba), false },
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABomba_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABomba>::IsAbstract,
 	};
@@ -109,11 +114,11 @@ void EmptyLinkFunctionForGeneratedCodeBomba() {}
 		DependentSingletons,
 		nullptr,
 		Z_Construct_UClass_ABomba_Statics::PropPointers,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_ABomba_Statics::PropPointers),
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ABomba_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ABomba_Statics::Class_MetaDataParams))
 	};
@@ -126,7 +131,7 @@ void EmptyLinkFunctionForGeneratedCodeBomba() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomba, 3778812039);
+	IMPLEMENT_CLASS(ABomba, 1546808208);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABomba>()
 	{
 		return ABomba::StaticClass();

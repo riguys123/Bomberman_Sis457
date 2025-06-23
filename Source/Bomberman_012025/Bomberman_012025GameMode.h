@@ -6,10 +6,12 @@
 #include "GameFramework/GameModeBase.h"
 #include "Bomberman_012025GameMode.generated.h"
 
+
 class ABloque_Padre;
 class ABloqueLadrillo;
 class AEnemigo;
 class ABloqueMadera;
+class AInvokerBombManager;
 
 
 UCLASS(minimalapi)
@@ -19,11 +21,14 @@ class ABomberman_012025GameMode : public AGameModeBase
 
 public:
 	ABomberman_012025GameMode();
+
+protected:
+	// Puntero al invocador (gestor de comandos)
+	UPROPERTY()
+	AInvokerBombManager* InvokerBombManager;         // patron comand
+
 public:
 	virtual void BeginPlay() override;
-
-
-
 
 public:
 	//posicion del siguiente bloque 
@@ -162,6 +167,13 @@ public:
 	void CrearEjercitoAcuatico();
 	//-----------------------------------------------PROTOTYPE
 	TMap<FString, ABloque_Padre*> Prototipos;
+	//-----------------------------------------------COMAND
+	public:
+		// Método público para que otros actores accedan al invocador
+		AInvokerBombManager* GetInvokerBombManager() const { return InvokerBombManager; }
+
+
+
 };
 
 

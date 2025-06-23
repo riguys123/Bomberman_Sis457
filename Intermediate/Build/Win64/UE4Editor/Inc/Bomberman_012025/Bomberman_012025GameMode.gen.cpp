@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025GameMode() {}
 	BOMBERMAN_012025_API UClass* Z_Construct_UClass_ABomberman_012025GameMode();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_Bomberman_012025();
+	BOMBERMAN_012025_API UClass* Z_Construct_UClass_AInvokerBombManager_NoRegister();
 	BOMBERMAN_012025_API UClass* Z_Construct_UClass_AEnemigo_NoRegister();
 // End Cross Module References
 	void ABomberman_012025GameMode::StaticRegisterNativesABomberman_012025GameMode()
@@ -32,6 +33,10 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025GameMode() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_InvokerBombManager_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_InvokerBombManager;
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EnemigosA_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EnemigosA_MetaData[];
@@ -53,6 +58,14 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025GameMode() {}
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_InvokerBombManager_MetaData[] = {
+		{ "Comment", "// Puntero al invocador (gestor de comandos)\n" },
+		{ "ModuleRelativePath", "Bomberman_012025GameMode.h" },
+		{ "ToolTip", "Puntero al invocador (gestor de comandos)" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_InvokerBombManager = { "InvokerBombManager", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomberman_012025GameMode, InvokerBombManager), Z_Construct_UClass_AInvokerBombManager_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_InvokerBombManager_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_InvokerBombManager_MetaData)) };
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_EnemigosA_Inner = { "EnemigosA", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AEnemigo_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_EnemigosA_MetaData[] = {
@@ -63,6 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025GameMode() {}
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_EnemigosA = { "EnemigosA", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABomberman_012025GameMode, EnemigosA), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_EnemigosA_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_EnemigosA_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABomberman_012025GameMode_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_InvokerBombManager,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_EnemigosA_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABomberman_012025GameMode_Statics::NewProp_EnemigosA,
 	};
@@ -93,7 +107,7 @@ void EmptyLinkFunctionForGeneratedCodeBomberman_012025GameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABomberman_012025GameMode, 1441284065);
+	IMPLEMENT_CLASS(ABomberman_012025GameMode, 2790737692);
 	template<> BOMBERMAN_012025_API UClass* StaticClass<ABomberman_012025GameMode>()
 	{
 		return ABomberman_012025GameMode::StaticClass();

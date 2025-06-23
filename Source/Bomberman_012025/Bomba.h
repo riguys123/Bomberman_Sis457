@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "IBomba.h"
 #include "Bomba.generated.h"
 
 UCLASS()
-class BOMBERMAN_012025_API ABomba : public AActor
+class BOMBERMAN_012025_API ABomba : public AActor, public IIBomba
 {
 	GENERATED_BODY()
 	
@@ -40,5 +41,5 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Explosion")
 	float DistanciaEntreBloques = 100.0f; //distancia bloques 
 
-
+	virtual void Explota() override;
 };

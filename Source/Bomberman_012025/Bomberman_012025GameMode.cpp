@@ -35,6 +35,7 @@
 #include "IPrototype.h"
 #include "MuroBase.h"
 #include "Moneda.h"	
+#include "InvokerBombManager.h"
 
 
 ABomberman_012025GameMode::ABomberman_012025GameMode()
@@ -55,14 +56,14 @@ void ABomberman_012025GameMode::BeginPlay()
 
 	//-------------------------------------------------------------------------------FACTORY METHOD
 	// 1. Spawnea la fábrica en el mundo
-	FActorSpawnParameters SpawnParams;
-	SpawnParams.Name = TEXT("FabricaDeBloques");
+	FActorSpawnParameters SpawnParams1;
+	SpawnParams1.Name = TEXT("FabricaDeBloques");
 	
 	AFabricaBloques* Fabrica = GetWorld()->SpawnActor<AFabricaBloques>(
 		AFabricaBloques::StaticClass(),
 		FVector(0.f, 0.f, 0.f),           // Posición donde aparece la fábrica
 		FRotator::ZeroRotator,
-		SpawnParams
+		SpawnParams1
 	);
 
 	// 2. Verifica que la fábrica se creó correctamente
@@ -157,6 +158,19 @@ void ABomberman_012025GameMode::BeginPlay()
 	AActor* NuevoBloque = Prototipos["Hielo"]->Clonar(GetWorld(), FVector(100.0f, 200.0f, 190.0f), FRotator::ZeroRotator);
 
 
+	//----------------------------------------------------------------------------COMAND
+	
+	if (!InvokerBombManager)
+	{
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+		InvokerBombManager = GetWorld()->SpawnActor<AInvokerBombManager>(AInvokerBombManager::StaticClass(), FVector::ZeroVector, FRotator::ZeroRotator, SpawnParams);
+		if (InvokerBombManager)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("InvokerBombManager creado desde GameMode."));
+		}
+	}
 
 	// Crear monedas individuales
 	AMoneda* Moneda1 = GetWorld()->SpawnActor<AMoneda>(AMoneda::StaticClass(), FVector(100.0f, 880.0f, 200.0f), FRotator::ZeroRotator);

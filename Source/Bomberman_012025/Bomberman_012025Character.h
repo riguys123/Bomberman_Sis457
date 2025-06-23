@@ -3,6 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Bomba.h"
+#include "InvokerBombManager.h"
+#include "ComandoColocarBomba.h"
 #include "GameFramework/Character.h"
 #include "Bomberman_012025Character.generated.h"
 
@@ -28,6 +31,19 @@ public:
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
+	// Clase de bomba que se va a colocar (se asigna en el editor o por código)
+	UPROPERTY(EditDefaultsOnly, Category = "Bomba")
+	TSubclassOf<ABomba> ClaseBomba;
+	// Método que crea y retorna una bomba en el mundo
+	ABomba* ColocarBomba();
+
+	// Invoker para comandos de bomba
+	UPROPERTY()
+	AInvokerBombManager* InvokerBombManager;
+
+	// Comando concreto para colocar bomba
+	UPROPERTY()
+	AComandoColocarBomba* ComandoColocarBombaInstance;
 
 protected:
 
@@ -58,6 +74,9 @@ protected:
 	/** Handler for when a touch input stops. */
 	void TouchStopped(ETouchIndex::Type FingerIndex, FVector Location);
 
+	UFUNCTION()
+	void InputColocarBomba();
+
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -68,5 +87,8 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+protected:
+	virtual void BeginPlay() override;
 };
 

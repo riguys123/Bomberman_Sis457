@@ -8,6 +8,11 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Bomba.h"
+#include "InvokerBombManager.h"
+#include "ComandoColocarBomba.h"
+#include "Kismet/GameplayStatics.h"
+#include "Bomberman_012025GameMode.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ABomberman_012025Character
@@ -74,8 +79,69 @@ void ABomberman_012025Character::SetupPlayerInputComponent(class UInputComponent
 
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &ABomberman_012025Character::OnResetVR);
+	PlayerInputComponent->BindAction("ColocarBomba", IE_Pressed, this, &ABomberman_012025Character::InputColocarBomba);
+
 }
 
+void ABomberman_012025Character::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// 1. Obtener el GameMode y el InvokerBombManager
+	if (AGameModeBase* GM = UGameplayStatics::GetGameMode(GetWorld()))
+	{
+		if (ABomberman_012025GameMode* BomberGM = Cast<ABomberman_012025GameMode>(GM))
+		{
+			InvokerBombManager = BomberGM->GetInvokerBombManager();
+		}
+	}
+
+	// 2. Crear el comando y asociarlo a este personaje
+	if (InvokerBombManager)
+	{
+		ComandoColocarBombaInstance = GetWorld()->SpawnActor<AComandoColocarBomba>();
+		if (ComandoColocarBombaInstance)
+		{
+			ComandoColocarBombaInstance->Inicializar(this);
+			UE_LOG(LogTemp, Warning, TEXT("ComandoColocarBomba creado e inicializado."));
+		}
+	}
+
+}
+
+void ABomberman_012025Character::InputColocarBomba()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, TEXT("Colocar bomba (Command)"));
+
+	if (InvokerBombManager && ComandoColocarBombaInstance)
+	{
+		InvokerBombManager->SetComando(ComandoColocarBombaInstance);
+		InvokerBombManager->EjecutarComando();
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Invoker o Comando no inicializados"));
+	}
+}
+ABomba* ABomberman_012025Character::ColocarBomba()
+{
+	if (!ClaseBomba) return nullptr;
+
+	FVector Ubicacion = GetActorLocation();
+	FRotator Rotacion = FRotator::ZeroRotator;
+
+	FActorSpawnParameters Params;
+	Params.Owner = this;
+
+	ABomba* NuevaBomba = GetWorld()->SpawnActor<ABomba>(ClaseBomba, Ubicacion, Rotacion, Params);
+
+	if (NuevaBomba)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Bomba colocada en %s"), *Ubicacion.ToString());
+	}
+
+	return NuevaBomba;
+}
 
 void ABomberman_012025Character::OnResetVR()
 {

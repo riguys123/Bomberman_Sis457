@@ -1,5 +1,7 @@
 C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\DebugGame\Bomberman_012025\Definitions.Bomberman_012025.h
 C:\Bomberman_012025\Source\Bomberman_012025\Bomba.h
+C:\Bomberman_012025\Source\Bomberman_012025\Public\IBomba.h
+C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\IBomba.generated.h
 C:\Bomberman_012025\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_012025\Bomba.generated.h
 C:\Bomberman_012025\Source\Bomberman_012025\Bloque_Padre.h
 C:\Bomberman_012025\Source\Bomberman_012025\Public\ETipoBloque.h

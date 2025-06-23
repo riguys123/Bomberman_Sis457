@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Bomberman_012025.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{9B0FDA65-AE90-40BE-BDEE-1345568A1F1F}</UniqueIdentifier>
+      <UniqueIdentifier>{2817631A-9F19-4899-B4B0-CB2FCB2FE868}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Bomberman_012025.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\Temp.txt" />
     <Filter Include="Config">
-      <UniqueIdentifier>{B9FEEC1D-C0B4-4390-A481-0085DB0215B2}</UniqueIdentifier>
+      <UniqueIdentifier>{B99878CA-9986-4648-B6E3-D6133F63C3E0}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -33,7 +33,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Bomberman_012025">
-      <UniqueIdentifier>{83B14739-9406-4549-AD84-72A16B7AC4D4}</UniqueIdentifier>
+      <UniqueIdentifier>{B6D598BB-84F6-4746-B17C-49BADEF939E2}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Bomberman_012025\BloqueAcero.cpp">
       <Filter>Source\Bomberman_012025</Filter>
@@ -219,8 +219,20 @@
       <Filter>Source\Bomberman_012025</Filter>
     </ClInclude>
     <Filter Include="Source\Bomberman_012025\Private">
-      <UniqueIdentifier>{C209687C-54B1-4B0F-898E-2E30AB4F4AE3}</UniqueIdentifier>
+      <UniqueIdentifier>{D6E3D90E-D334-408E-A44C-8A5559A11EAD}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Bomberman_012025\Private\BombaDecorator.cpp">
+      <Filter>Source\Bomberman_012025\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Bomberman_012025\Private\BombaDecoratorFuego.cpp">
+      <Filter>Source\Bomberman_012025\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Bomberman_012025\Private\BombaDecoratorHielo.cpp">
+      <Filter>Source\Bomberman_012025\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Bomberman_012025\Private\ComandoColocarBomba.cpp">
+      <Filter>Source\Bomberman_012025\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\DirectorEjercito.cpp">
       <Filter>Source\Bomberman_012025\Private</Filter>
     </ClCompile>
@@ -236,10 +248,19 @@
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\FabricaBloques.cpp">
       <Filter>Source\Bomberman_012025\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Bomberman_012025\Private\IBomba.cpp">
+      <Filter>Source\Bomberman_012025\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Bomberman_012025\Private\IComand.cpp">
+      <Filter>Source\Bomberman_012025\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\IEjercitoBuilder.cpp">
       <Filter>Source\Bomberman_012025\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\IFabricaBloques.cpp">
+      <Filter>Source\Bomberman_012025\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Bomberman_012025\Private\InvokerBombManager.cpp">
       <Filter>Source\Bomberman_012025\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Bomberman_012025\Private\IPrototype.cpp">
@@ -252,8 +273,20 @@
       <Filter>Source\Bomberman_012025\Private</Filter>
     </ClCompile>
     <Filter Include="Source\Bomberman_012025\Public">
-      <UniqueIdentifier>{DFCFD1F5-464B-491B-88F3-65D29494509C}</UniqueIdentifier>
+      <UniqueIdentifier>{EE6516EB-F3C2-4E00-8601-5A673B7BECC1}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Bomberman_012025\Public\BombaDecorator.h">
+      <Filter>Source\Bomberman_012025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Bomberman_012025\Public\BombaDecoratorFuego.h">
+      <Filter>Source\Bomberman_012025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Bomberman_012025\Public\BombaDecoratorHielo.h">
+      <Filter>Source\Bomberman_012025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Bomberman_012025\Public\ComandoColocarBomba.h">
+      <Filter>Source\Bomberman_012025\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\DirectorEjercito.h">
       <Filter>Source\Bomberman_012025\Public</Filter>
     </ClInclude>
@@ -269,10 +302,19 @@
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\FabricaBloques.h">
       <Filter>Source\Bomberman_012025\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Bomberman_012025\Public\IBomba.h">
+      <Filter>Source\Bomberman_012025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Bomberman_012025\Public\IComand.h">
+      <Filter>Source\Bomberman_012025\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\IEjercitoBuilder.h">
       <Filter>Source\Bomberman_012025\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\IFabricaBloques.h">
+      <Filter>Source\Bomberman_012025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Bomberman_012025\Public\InvokerBombManager.h">
       <Filter>Source\Bomberman_012025\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Bomberman_012025\Public\IPrototype.h">

@@ -174,3 +174,7 @@ void ABomba::Explotar()
 	Destroy();
 }
 
+void ABomba::Explota()
+{
+}
+
